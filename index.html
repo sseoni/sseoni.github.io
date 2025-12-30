@@ -2,64 +2,67 @@
 layout : default
 title : Home
 ---
+<style>
+    body {
+        background-color: var(--background-gray, #F3F3F1); 
+    }
+</style>
 
-<div class="homepage">
-    <div class="hero-wrapper">
-        <header class="hero-content">
-            <img class="hero-img" src="/assets/snowman.png" alt="Hero Snowman">
-            
-            <h1 class="introduction">
-                Design and engineer LLM systems<br>
-                grounded in linguistic domain knowledge,<br>
-                robust and explainable AI principles.
-            </h1>
-            <div class="btn-group">
-                <a href="/blog/" class="btn-pill">Blog</a>    
-                <a href="/portfolio/" class="btn-pill">Portfolio</a>    
-            </div>
-        </header>
-    </div>
-
-    <main class="container">
+<div class="hero-wrapper">
+    <header class="hero-content">
+        <img class="hero-img" src="/assets/snowman.png" alt="Hero Snowman">
         
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Highlighted Posts</h2>
-                <a href="/blog/" class="view-all">view All →</a>
-            </div>
-            
-            <div class="grid-4">
-                {% for post in site.posts %}
-                    {% if post.tags contains 'highlight' %}
-                    <article class="card">
-                        <a href="{{ post.url }}" style="text-decoration: none; color: inherit;">
-                            <h3 class="card-title">{{ post.title }}</h3>
-                            <p class="card-body">{{ post.excerpt | strip_html | truncate: 100 }}</p>
-                            <small style="color: #888;">{{ post.date | date: "%Y.%m.%d" }}</small>
-                        </a>
-                    </article>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Recent Projects</h2>
-                <a href="/blog/experiences/projects/" class="view-all">view All →</a>
-            </div>
-
-            <div class="grid-1">
-                <article class="card">
-                    <h3 class="card-title">Cherry on haystack</h3>
-                    <p class="card-body">Developing a plant care application using Computer Vision...</p>
-                </article>
-                <article class="card">
-                    <h3 class="card-title">Verlan Translator</h3>
-                    <p class="card-body">NLP project focused on low-resource language translation...</p>
-                </article>
-            </div>
-        </section>
-
-    </main>
+        <h1 class="introduction">
+            Design and engineer LLM systems<br>
+            grounded in linguistic domain knowledge,<br>
+            robust and explainable AI principles.
+        </h1>
+        <div class="btn-group">
+            <a href="/blog/" class="btn-pill">Blog</a>    
+            <a href="/portfolio/" class="btn-pill">Portfolio</a>    
+        </div>
+    </header>
 </div>
+
+<main class="container">
+    
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Highlighted Posts</h2>
+            <a href="/blog/" class="view-all">view All →</a>
+        </div>
+        
+        <div class="grid-4">
+            {% for post in site.posts %}
+                {% if post.tags contains 'highlight' %}
+                <article class="card">
+                    <a href="{{ post.url }}" style="text-decoration: none; color: inherit;">
+                        <h3 class="card-title">{{ post.title }}</h3>
+                        <p class="card-body">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+                        <small style="color: #888;">{{ post.date | date: "%Y.%m.%d" }}</small>
+                    </a>
+                </article>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Recent Projects</h2>
+            <a href="/blog/experiences/projects/" class="view-all">view All →</a>
+        </div>
+
+        <div class="grid-1">
+            <article class="card">
+                <h3 class="card-title">Cherry on haystack</h3>
+                <p class="card-body">Developing a plant care application using Computer Vision...</p>
+            </article>
+            <article class="card">
+                <h3 class="card-title">Verlan Translator</h3>
+                <p class="card-body">NLP project focused on low-resource language translation...</p>
+            </article>
+        </div>
+    </section>
+
+</main>
