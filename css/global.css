@@ -40,7 +40,8 @@ body {
 }
 
 main.container {
-    padding: 30px 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .main-wide {
