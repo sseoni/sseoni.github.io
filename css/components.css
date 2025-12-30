@@ -33,6 +33,8 @@ main.container {
 
 .homepage{
     background-color: var(--background-gray);
+    width: 100%;
+    min-height: 100vh;
 }
 
 .hero-content {
