@@ -9,9 +9,9 @@ title : Home
     }
 </style>
 
-<div class="hero-wrapper">
+<div class="container">
     <header class="hero-content">
-        <img class="hero-img" src="/assets/snowman.png" alt="Hero Snowman">
+        <img class="hero-img" src="/assets/snowman.png">
         
         <h1 class="introduction">
             Design and engineer LLM systems<br>
@@ -25,8 +25,7 @@ title : Home
     </header>
 </div>
 
-<main class="container">
-    
+<main class="container main-wide">
     <section class="section">
         <div class="section-header">
             <h2 class="section-title">Highlighted Posts</h2>
@@ -35,7 +34,7 @@ title : Home
         
         <div class="grid-4">
             {% for post in site.posts %}
-                {% if post.tags contains 'highlight' %}
+                {% if post.highlight == true %}
                 <article class="card">
                     <a href="{{ post.url }}" style="text-decoration: none; color: inherit;">
                         <h3 class="card-title">{{ post.title }}</h3>
@@ -50,20 +49,26 @@ title : Home
 
     <section class="section">
         <div class="section-header">
-            <h2 class="section-title">Recent Projects</h2>
+            <h2 class="section-title">Main Projects</h2>
             <a href="/blog/experiences/projects/" class="view-all">view All →</a>
         </div>
 
         <div class="grid-1">
-            <article class="card">
-                <h3 class="card-title">Cherry on haystack</h3>
-                <p class="card-body">Developing a plant care application using Computer Vision...</p>
-            </article>
-            <article class="card">
-                <h3 class="card-title">Verlan Translator</h3>
-                <p class="card-body">NLP project focused on low-resource language translation...</p>
-            </article>
-        </div>
+            {% for post in site.posts %}
+                {% if post.main-project == true %}
+                <article class="card">
+                    <a href="{{ post.url }}" style="text-decoration: none; color: inherit; display: block;">
+                        <h3 class="card-title">{{ post.title }}</h3>
+                        <p class="card-body">
+                            {% if post.description %}
+                                {{ post.description }}
+                            {% else %}
+                                {{ post.excerpt | strip_html | truncate: 100 }}
+                            {% endif %}
+                        </p>
+                    </a>
+                </article>
+                {% endif %} {% endfor %} </div>
     </section>
 
 </main>l

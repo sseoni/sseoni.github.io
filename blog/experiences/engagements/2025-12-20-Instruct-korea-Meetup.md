@@ -2,7 +2,9 @@
 layout: blog
 title: "Instruct korea Meetup: 포스터 발표 후기"
 date: 2025-12-20
-tags: [highlight, 행사후기]
+tags: [행사후기, 가짜연구소]
+highlight: true
+recent-project: false
 summary:
 ---
 

@@ -1,7 +1,7 @@
 /* =========================================
    NAVBAR (네비게이션 바)
    ========================================= */
-   .navbar {
+.navbar {
     background-color: var(--color-white);
     padding: var(--space-20) 50px;
 }
@@ -42,24 +42,25 @@
    SECTION HEADER (섹션 제목)
    ========================================= */
 .section-header {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
     margin-bottom: var(--space-20);
     min-height: 32px; 
 }
-  
+
 .section-title {
-    position: absolute;          /* 흐름 무시하고 절대 위치 */
-    left: 50%;                   /* 왼쪽에서 50% 이동 */
-    transform: translateX(-50%); /* 내 크기 절반만큼 다시 이동 (완전 중앙) */
+    grid-column: 2;
     
     font-weight: var(--fw-bold);
     font-size: var(--fs-heading);
     line-height: var(--lh-heading);
-    
-    white-space: nowrap;         /* 줄바꿈 방지 */
+    white-space: nowrap;
+}
+
+.view-all {
+    grid-column: 3;
+    justify-self: end;
 }
 
 /* =========================================
@@ -82,9 +83,13 @@
     opacity: 0.8;
 }
 
+.btn-pill.disabled {
+    pointer-events: none;
+}
+
 .btn-group {
     display: flex;
-    gap: var(--space-10);
+    gap: var(--space-20);
 }
 
 /* =========================================
@@ -173,14 +178,15 @@
 /* =========================================
    FOOTER (푸터)
    ========================================= */
-.footer, .footer-layout { /* 둘 다 대응 */
+.footer-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
     background-color: transparent;
-    padding-bottom: 100px;
+    padding-top: var(--space-20);
+    padding-bottom: 80px;
 }
 
 .text-links {
