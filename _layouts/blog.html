@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Sseoni</title>
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/components.css">
+
+    <style>
+        /* 1. 전체 레이아웃 (사이드바 + 본문) */
+        .blog-layout {
+            display: flex;
+            gap: 40px;           /* 사이드바와 본문 사이 간격 */
+            padding-top: 40px;
+            padding-bottom: 80px;
+            align-items: flex-start; /* 둘 다 상단 기준 정렬 */
+        }
+
+        /* 2. 본문 영역 (남은 공간 꽉 채우기) */
+        .blog-content {
+            flex: 1;           /* 남은 공간 차지 */
+            min-width: 0;      /* 내용이 넘쳐도 레이아웃 깨짐 방지 */
+            line-height: 1.7;  /* 글 읽기 좋게 줄간격 조정 */
+        }
+
+        /* 3. 모바일 대응 (화면 좁을 때) */
+        @media (max-width: 768px) {
+            .blog-layout {
+                flex-direction: column; /* 세로로 쌓기 */
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    {% include navbar.html %}
+
+    <div class="container blog-layout">
+        
+        {% include sidebar.html %}
+
+        <main class="blog-content">
+            {{ content }}
+        </main>
+        
+    </div>
+    <div class="container"> 
+        {% include footer.html %}
+    </div>
+
+</body>
+</html>

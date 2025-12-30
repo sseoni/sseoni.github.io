@@ -100,6 +100,64 @@ body {
   gap: var(--space-10);
 }
 
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  padding-right: 20px;
+  font-family: var(--font-body, sans-serif);
+}
+
+.sidebar-section {
+  margin-bottom: 24px;       /* 섹션 간 간격 */
+  padding-bottom: 12px;      /* 구분선과 내용 사이 간격 */
+  border-bottom: 1px solid #eee; /* ✨ 은은한 회색 구분선 */
+}
+
+.sidebar-section:last-child {
+  border-bottom: none;
+}
+
+.sidebar-heading {
+  font-size: 16px;
+  font-weight: 700; /* Bold */
+  color: #000;
+  margin-bottom: 12px;
+}
+.sidebar-heading a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 6px 0;    /* 링크 위아래 간격 */
+  font-size: 14px;
+  color: #444;       /* 살짝 연한 검정 */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sidebar-link:hover {
+  color: #000;
+}
+
+.sidebar-link.active, .sidebar-heading a.active {
+  color: #0056b3; /* 파란색 포인트 (원하는 색으로 변경 가능) */
+  font-weight: 600;
+}
+
+.sidebar-toggle {
+  display: none; 
+}
+
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .grid-4 { grid-template-columns: 1fr; }
@@ -114,5 +172,44 @@ body {
       position: static; 
       transform: none;
       white-space: normal;
+  }
+
+    .sidebar {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 30px;
+      border-right: none;
+      border-bottom: 1px solid #eee;
+  }
+
+  .sidebar-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 15px 0;
+      background: none;
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+      cursor: pointer;
+      text-align: left;
+  }
+
+  .sidebar-content {
+      display: none; /* 안 보임 */
+      padding-bottom: 20px;
+  }
+
+  /* 3. 메뉴 열렸을 때 (.open 클래스가 붙으면) */
+  .sidebar-content.open {
+      display: block;
+      animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
   }
 }

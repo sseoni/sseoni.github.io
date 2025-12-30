@@ -1,0 +1,40 @@
+- title: View All
+  url: /blog/
+  items: []
+
+- title: Study Log
+  items:
+    - title: AI / ML / ML-Ops
+      url: /blog/study-log/ai-ml/
+    - title: Language Model
+      url: /blog/study-log/nlp/
+    - title: Docker
+      url: /blog/study-log/docker/
+    - title: AWS
+      url: /blog/study-log/aws/
+    - title: Error handling
+      url: /blog/study-log/error-handling/
+
+- title: Paper Review
+  items:
+    - title: Open Source
+      url: /blog/paper-review/open-source/
+    - title: Community
+      url: /blog/paper-review/community/
+    - title: Education
+      url: /blog/paper-review/education/
+
+- title: Experiences
+  items:
+    - title: Projects
+      url: /blog/experiences/projects/
+    - title: Educations
+      url: /blog/experiences/educations/
+    - title: Engagements
+      url: /blog/experiences/engagements/
+
+- title: Quick Links
+  items:
+    - title:
+      url:
+      new_tab: true
