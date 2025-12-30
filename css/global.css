@@ -1,215 +1,89 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* =========================================
+   RESET & BASE STYLE
+   ========================================= */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 ul, ol {
-  list-style: none; /* 리스트 점 없애기 */
+    list-style: none; /* 리스트 점 없애기 */
 }
 
 a {
-  text-decoration: none; /* 링크 밑줄 없애기 */
-  color: inherit;        /* 부모 색상 따라가기 */
+    text-decoration: none; /* 링크 밑줄 없애기 */
+    color: inherit;        /* 부모 색상 따라가기 */
 }
 
 button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-/* Base Style */
 body {
-  color: var(--color-black);
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    color: var(--color-black);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    line-height: 1.6;
 }
 
-/* Common Layout */
+/* =========================================
+   COMMON LAYOUT
+   ========================================= */
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--space-20);
-  width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-20);
+    width: 100%;
 }
 
+main.container {
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+/* 홈페이지 전용 배경색 및 높이 */
+.homepage {
+    background-color: var(--background-gray);
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* 섹션 간격 */
 .section {
-  margin-bottom: 80px;
+    margin-bottom: 80px;
 }
 
-.section-header {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-bottom: var(--space-20);
-  min-height: 32px; 
+.section:last-child {
+  margin-bottom: 0;
 }
 
-.section-title {
-  position: absolute;          /* 흐름 무시하고 절대 위치 */
-  left: 50%;                   /* 왼쪽에서 50% 이동 */
-  transform: translateX(-50%); /* 내 크기 절반만큼 다시 이동 (완전 중앙) */
-  
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-heading);
-  line-height: var(--lh-heading);
-  
-  white-space: nowrap;         /* 줄바꿈 방지 */
-}
-
-.footer-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-  padding-bottom: 100px;
-}
-
-.text-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.text-links a {
-  color: var(--text-gray);
-  font-weight: var(--fw-medium);
-  transition: color 0.2s;
-}
-
-.text-links a:hover {
-  color: var(--color-black);
-  text-decoration: underline; /* 마우스 올리면 밑줄 */
-}
-
-
-/* Grid System */
+/* =========================================
+   GRID SYSTEM
+   ========================================= */
 .grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-10);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-10);
 }
 
 .grid-1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-10);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
 }
 
-
-/* Sidebar */
-.sidebar {
-  width: 240px;
-  padding-right: 20px;
-  font-family: var(--font-body, sans-serif);
-}
-
-.sidebar-section {
-  margin-bottom: 24px;       /* 섹션 간 간격 */
-  padding-bottom: 12px;      /* 구분선과 내용 사이 간격 */
-  border-bottom: 1px solid #eee; /* ✨ 은은한 회색 구분선 */
-}
-
-.sidebar-section:last-child {
-  border-bottom: none;
-}
-
-.sidebar-heading {
-  font-size: 16px;
-  font-weight: 700; /* Bold */
-  color: #000;
-  margin-bottom: 12px;
-}
-.sidebar-heading a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.sidebar-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar-link {
-  display: block;
-  padding: 6px 0;    /* 링크 위아래 간격 */
-  font-size: 14px;
-  color: #444;       /* 살짝 연한 검정 */
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.sidebar-link:hover {
-  color: #000;
-}
-
-.sidebar-link.active, .sidebar-heading a.active {
-  color: #0056b3; /* 파란색 포인트 (원하는 색으로 변경 가능) */
-  font-weight: 600;
-}
-
-.sidebar-toggle {
-  display: none; 
-}
-
-
-/* Mobile Responsive */
+/* =========================================
+   MOBILE RESPONSIVE (LAYOUT)
+   ========================================= */
 @media (max-width: 768px) {
-  .grid-4 { grid-template-columns: 1fr; }
+    main.container {
+        padding: 0 20px;
+    }
 
-  .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-
-  .section-title {
-      position: static; 
-      transform: none;
-      white-space: normal;
-  }
-
-    .sidebar {
-      width: 100%;
-      padding-right: 0;
-      margin-bottom: 30px;
-      border-right: none;
-      border-bottom: 1px solid #eee;
-  }
-
-  .sidebar-toggle {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 15px 0;
-      background: none;
-      border: none;
-      font-size: 16px;
-      font-weight: 700;
-      color: #333;
-      cursor: pointer;
-      text-align: left;
-  }
-
-  .sidebar-content {
-      display: none; /* 안 보임 */
-      padding-bottom: 20px;
-  }
-
-  /* 3. 메뉴 열렸을 때 (.open 클래스가 붙으면) */
-  .sidebar-content.open {
-      display: block;
-      animation: slideDown 0.3s ease-out;
-  }
-
-  @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-  }
+    .grid-4 { 
+        grid-template-columns: 1fr; 
+    }
 }
