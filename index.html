@@ -1,62 +1,63 @@
-<header class="hero-content">
-    <img class="hero-img" src="assets/snowman.png">
-    <h1 class="introduction">
-        Design and engineer LLM systems<br>
-        grounded in linguistic domain knowledge,<br>
-        robust and explainable AI principles.
-    </h1>
-    <div class="btn-group">
-        <a href="/blog/" class="btn-pill">Blog</a>    
-        <a href="/portfolio/" class="btn-pill">Portfolio</a>    
-    </div>
-</header>
+---
+layout: default
+title: Home
+---
+
+<div class="hero-wrapper">
+    <header class="hero-content">
+        <img class="hero-img" src="/assets/snowman.png" alt="Hero Snowman">
+        
+        <h1 class="introduction">
+            Design and engineer LLM systems<br>
+            grounded in linguistic domain knowledge,<br>
+            robust and explainable AI principles.
+        </h1>
+        <div class="btn-group">
+            <a href="/blog/" class="btn-pill">Blog</a>    
+            <a href="/portfolio/" class="btn-pill">Portfolio</a>    
+        </div>
+    </header>
+</div>
 
 <main class="container">
     
     <section class="section">
         <div class="section-header">
             <h2 class="section-title">Highlighted Posts</h2>
-            <a href="#" class="view-all">view All →</a>
+            <a href="/blog/" class="view-all">view All →</a>
         </div>
         
         <div class="grid-4">
-            <article class="card">
-                <h3 class="card-title">Title</h3>
-                <p class="card-body">Body text for whatever you'd like to say. Add main takeaway points...</p>
-            </article>
-            <article class="card">
-                <h3 class="card-title">Title</h3>
-                <p class="card-body">Body text for whatever you'd like to say...</p>
-            </article>
-            <article class="card">
-                <h3 class="card-title">Title</h3>
-                <p class="card-body">Body text for whatever you'd like to say...</p>
-            </article>
-            <article class="card">
-                <h3 class="card-title">Title</h3>
-                <p class="card-body">Body text for whatever you'd like to say...</p>
-            </article>
+            {% for post in site.posts %}
+                {% if post.tags contains 'highlight' %}
+                <article class="card">
+                    <a href="{{ post.url }}" style="text-decoration: none; color: inherit;">
+                        <h3 class="card-title">{{ post.title }}</h3>
+                        <p class="card-body">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+                        <small style="color: #888;">{{ post.date | date: "%Y.%m.%d" }}</small>
+                    </a>
+                </article>
+                {% endif %}
+            {% endfor %}
         </div>
     </section>
 
     <section class="section">
         <div class="section-header">
             <h2 class="section-title">Recent Projects</h2>
-            <a href="#" class="view-all">view All →</a>
+            <a href="/blog/experiences/projects/" class="view-all">view All →</a>
         </div>
 
         <div class="grid-1">
             <article class="card">
-                <h3 class="card-title">Title</h3>
-                <p class="card-body">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes...</p>
+                <h3 class="card-title">Cherry on haystack</h3>
+                <p class="card-body">Developing a plant care application using Computer Vision...</p>
             </article>
             <article class="card">
-                <h3 class="card-title">Title</h3>
-                <p class="card-body">Body text for whatever you'd like to say...</p>
+                <h3 class="card-title">Verlan Translator</h3>
+                <p class="card-body">NLP project focused on low-resource language translation...</p>
             </article>
         </div>
     </section>
-
-
 
 </main>
