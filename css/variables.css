@@ -1,0 +1,40 @@
+:root {
+    /* colors */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+
+    --background-gray: #F3F3F1;
+    --text-gray: #757575;
+    --stroke-gray: #D9D9D9;
+    
+    /* Font weights */
+    --fw-bold: 700;
+    --fw-medium: 500;
+    --fw-regular: 400;
+    --fw-light: 300;
+
+    /* Font sizes */
+    --fs-heading: 24px;
+    --fs-subheading: 20px;
+    --fs-body: 16px;
+    --fs-body-small: 14px;
+
+    /* Line heights */
+    --lh-point: 160%;
+    --lh-heading: 120%;
+    --lh-body: 140%;
+
+    /* Spacing Scale */
+    --space-5: 5px;
+    --space-10: 10px;
+    --space-20: 20px;
+    --space-30: 30px;
+
+    /* Radius */
+    --radius-small: 10px;
+    --radius-large: 20px;
+    --radius-hero: 100px;
+
+    /* Layout */
+    --max-width: 1280px;
+}

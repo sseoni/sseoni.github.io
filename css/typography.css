@@ -1,0 +1,38 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+body {
+    font-family: 'Pretendard', sans-serif;
+}
+
+.introduction {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-heading);
+    line-height: var(--lh-point);
+}
+
+.heading {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-heading);
+    line-height: var(--lh-heading);
+}
+.subheading {
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-subheading);
+    line-height: var(--lh-heading);
+}
+
+.body-strong {
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+}
+.body-base {
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+}
+.body-small {
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body-small);
+    line-height: var(--lh-body);
+}

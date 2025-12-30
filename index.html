@@ -1,82 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Main Page</title>
-    <link rel="stylesheet" href="css/style.scss">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="menu-icon">&#9776;</div>
-        </nav>
-        <p class="helloworld">Hello World !<br> My name is <span c lass="highlight">Sseoni</span></p>
+<body class="homepage">
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">👩🏻‍💻 🐶 ✨ 🥐</div>
+                
+            <ul class="nav-links">
+                <li href="/blog/">Home</li>
+                <li href="/blog/">Blog</li>
+                <li href="/portfolio/">Portfolio</li>
+                <li href="/contact/">Contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-content">
+        <img class="hero-img" src="assets/snowman.png">
+        <h1 class="introduction">
+            Engineering LLM systems<br>
+            grounded in linguistic domain knowledge,<br>
+            robust and explainable AI principles.
+        </h1>
+        <div class="btn-group">
+            <a href="/blog/" class="btn-pill">Blog</a>    
+            <a href="/portfolio/" class="btn-pill">Portfolio</a>    
+        </div>
     </header>
-    
-    <main>
-        <div class="container">
-            <section class="profile">
-                <img src="https://avatars.githubusercontent.com/u/82037889?v=4" alt="Profile Image">
-                <div class="profile-info">
-                    <h2>Sseoni👩🏻‍💻🐶✨🥐</h2>
-                    <p>Korean girl who studies AI/ML in Seoul</p>
-                    <p>한국어 | English | Français | 汉语</p>
-                    <p>Python | SQL | C/C++ | Java<br>Machine Learning | AWS</p>
-                </div>
-            </section>
+
+    <main class="container">
         
-            <section class="recent-posts">
-                <h2>Recent Posts</h2>
-                <ul>
-                    <li><a href="#"><div class="post"></div></a></li>
-                    <li><a href="#"><div class="post"></div></a></li>
-                    <li><a href="#"><div class="post"></div></a></li>
-                </ul>
-
-                <div class="social-links">
-                    <a href="https://github.com/sseoni"><div class="circle"></div>Github</a>
-                    <a href="https://www.linkedin.com/in/seohyun-shin-4529b330b"><div class="circle"></div>LinkedIn</a>
-                    <a href="skills.html"><div class="circle"></div>Skills</a>
-                    <a href="photos.html"><div class="circle"></div>Photos</a>
-                </div>
-            </section>
-        </div>
-
-        <section class="menu">
-            <nav>
-                <a href="#">ML</a>
-                <a href="#">Docker</a>
-                <a href="#">Github</a>
-                <a href="#">ADsP</a>
-                <a href="#">SQLD</a>
-            </nav>
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Highlighted Posts</h2>
+                <a href="#" class="view-all">view All →</a>
+            </div>
+            
+            <div class="grid-4">
+                <article class="card">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-body">Body text for whatever you'd like to say. Add main takeaway points...</p>
+                </article>
+                <article class="card">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-body">Body text for whatever you'd like to say...</p>
+                </article>
+                <article class="card">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-body">Body text for whatever you'd like to say...</p>
+                </article>
+                <article class="card">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-body">Body text for whatever you'd like to say...</p>
+                </article>
+            </div>
         </section>
 
-        <section class="all-posts">
-            <h2>All Posts</h2>
-              {% for post in site.posts %}
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Projects</h2>
+                <a href="#" class="view-all">view All →</a>
+            </div>
 
-              <article class='post'>
-                <h1 class='post-title'>
-                  <a href="{{ site.path }}{{ post.url }}">
-                    {{ post.title }}
-                  </a>
-                </h1>
-              </article>
-              
-              {% endfor %}
+            <div class="grid-1">
+                <article class="card">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-body">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes...</p>
+                </article>
+                <article class="card">
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-body">Body text for whatever you'd like to say...</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section footer-layout">
+            <h2 class="heading">Contacts</h2>
+            <div class="text-links">
+                <a href="mailto:fdsa801@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/seohyun-shin-4529b330b/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/sseoni" target="_blank">Github</a>
+            </div>
         </section>
         
-        <div class="pagination">
-            <button id="prev">Previous</button>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <button id="next">Next</button>
-            <script src="pagination.js"></script>
-        </div>
     </main>
+
 </body>
 </html>

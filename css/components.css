@@ -1,0 +1,114 @@
+.navbar {
+    background-color: var(--color-white);
+    padding: var(--space-20) 50px;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-30);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-body-small);
+}
+
+
+main.container {
+    padding: 80px 100px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: var(--space-20) 20px;
+    }
+    
+    main.container {
+        padding: 0 20px;
+    }
+}
+
+.homepage{
+    background-color: var(--background-gray);
+}
+
+.hero-content {
+    display: flex;
+    background-color: var(--color-white);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-20);
+    text-align: center;
+    padding: 100px 100px;
+    border-radius: 0px 0px var(--radius-hero) var(--radius-hero)
+}
+
+.hero-img {
+    width: 240px;
+    height: 180px;
+}
+
+
+.btn-pill {
+    display: inline-block;
+    padding: var(--space-10) var(--space-10);
+    background-color: var(--background-gray);
+    color: var(--color-black);
+    border-radius: var(--radius-hero);
+    transition: opacity 0.2s;
+
+    font-weight: var(--fw-light);
+    font-size: var(--fs-body);
+    line-height: var(--lh-heading);
+}
+
+.btn-pill:hover {
+    opacity: 0.8;
+}
+
+.btn-group {
+    display: flex;
+    gap: var(--space-10);
+}
+
+
+.card {
+    background-color: transparent;
+    border: 1px solid var(--stroke-gray);
+    border-radius: var(--radius-small);
+    padding: var(--space-20) var(--space-20);
+    
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-body {
+    color: var(--text-gray);
+    word-break: keep-all;
+}
+
+
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-20);
+    font-size: 24px;
+    margin-top: var(--space-20);
+}
+
+.text-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-30);
+    color: var(--text-gray);
+    margin-top: var(--space-20);
+}

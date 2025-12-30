@@ -37,3 +37,19 @@
 </div>
 
 </div>
+
+```
+sseoni.github.io/
+ ├── assets/
+ |   ├── images/
+ |   └── icons/
+ ├── css/
+ |   ├── global.css          # 변수, 리셋, 공통 타이포그래피
+ |   ├── components.css      # Button, Card, Header 등 컴포넌트 스타일
+ |   └── pages.css           # 특정 페이지 전용 스타일 (필요시)
+ ├── blog/                   # jupyter-book build 결과물 또는 소스(_config.yml 포함)
+ ├── index.html
+ ├── portfolio.html
+ ├── contact.html
+ └── README.md
+```
