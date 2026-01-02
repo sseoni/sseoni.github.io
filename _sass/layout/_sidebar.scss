@@ -5,11 +5,11 @@
     width: 280px;
     flex-shrink: 0;
     padding: 50px 30px;
-    border: 1px solid var(--stroke-gray);
+    border: 1px solid var(--container-strok);
 }
 
 .sidebar-section {
-    border-bottom: 1px solid var(--stroke-gray);
+    border-bottom: 1px solid var(--container-strok);
 }
 
 .sidebar-section:last-child {
@@ -53,8 +53,11 @@
 }
 
 .sidebar-link:hover,
+.sidebar-heading a:hover {
+    background-color: var(--container-stroke);
+}
+
 .sidebar-link.active,
-.sidebar-heading a:hover,
 .sidebar-heading a.active {
     background-color: var(--background-gray);
 }
