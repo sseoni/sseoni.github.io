@@ -5,11 +5,13 @@
 </head>
 <body>
     
-    <nav class="navbar">...</nav>
+    {% include navbar.html %}
 
     {{ content }}
 
-    <footer class="footer">...</footer>
+    <footer class="footer">
+        {% include footer.html %}
+    </footer>
 
 </body>
 </html>
