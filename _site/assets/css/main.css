@@ -211,7 +211,7 @@ main.container { padding-top: 30px; padding-bottom: 30px; }
 .post-divider-line { border: none; border-top: 1px solid var(--stroke-gray); margin: 40px 0; }
 
 /* ========================================= MARKDOWN CONTENT STYLE (본문 스타일링) ========================================= */
-.post-content { font-size: 16px; line-height: 1.8; color: #333; word-break: keep-all; }
+.post-content { font-size: 16px; line-height: 1.8; color: #333; word-break: keep-all; overflow-wrap: break-word; word-break: break-word; }
 
 /* 문단 간격 */
 .post-content p { margin-bottom: 24px; }

@@ -55,6 +55,8 @@
     line-height: 1.8;
     color: #333;
     word-break: keep-all;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* 문단 간격 */
