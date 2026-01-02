@@ -1,7 +1,7 @@
 <!--
 items (필수)
     카드에 뿌려줄 데이터
-    "site.posts, site.data.portfolio.awards 등
+    site.posts, site.data.portfolio.awards 등
 title (필수)
     섹션의 큰 제목
     ""Projects"", ""Awards"", ""Educations"" 등
@@ -16,83 +16,67 @@ card-type (선택)
     ""stroke"" (박스형, 이미지 X), 생략 시 기본값 (밑줄형, 이미지 O)"
 viewall-url (선택)
     제목 옆 'View All →' 버튼 링크
+align-title	선택
+    제목 정렬 방식
+    ""text-left""(default), ""text-center""
 -->
 
-{% if include.section-type == "row" %}
-    <section class="section">
-        
-        <div class="section-header">
-            <h2 class="subheading">{{ include.title }}</h2>
-            
-            {% if include.viewall-url %}
-                <a href="{{ include.viewall-url }}" class="view-all">view All →</a>
-            {% endif %}
-        </div>
+{% assign layout_type = include.section-type | default: "row" %}
+{% assign grid_class = include.grid-type | default: "grid-1" %}
+{% assign align_class = include.align-title | default: "text-left" %}
+{% assign card_style = include.card-type | default: "underline" %}
 
-        <div class="{% if include.grid-type == 'grid-4' %}grid-4{% else %}grid-1{% endif %} ">
-            
-            {% for item in include.items %}
-                
+{% capture cards_content %}
+    <div class="{{ grid_class }}">
+        {% for item in include.items %}
             <a {% if item.url %} href="{{ item.url }}" {% endif %}
-            class="card 
-                   {% if include.card-type == 'stroke' %}card-stroke{% else %}card-underline{% endif %} 
-                   card-row 
-                   {% unless item.url %}state-null{% endunless %}">
-                   
-                    <div class="card-content">
-                        <h3 class="card-title">{{ item.title }}</h3>
-                        <p class="card-body">
-                            {% if item.description %}
-                                {{ item.description }}
-                            {% else %}
-                                {{ item.excerpt | strip_html | truncate: 150 }}
-                            {% endif %}
-                        </p>
-                    </div>
-
-                    {% if item.image and include.card-type != 'stroke' %}
-                        <img src="{{ item.image }}" class="card-thumbnail" alt="{{ item.title }}">
-                    {% endif %}
-                </a>
-
-            {% endfor %} 
-        </div>
-    </section>
-
-{% elsif include.section-type == "column" %}
-    <section class="section">
-        
-        <div class="grid-title"> 
-        
-            <div class="resume-left">
-                <h2 class="heading">{{ include.title }}</h2>
+            class="card card-{{ card_style }} card-row {% unless item.url %}state-null{% endunless %}">
                 
+                <div class="card-content">
+                    <h3 class="card-title">{{ item.title }}</h3>
+                    <p class="card-body">
+                        {% if item.description %}
+                            {{ item.description }}
+                        {% else %}
+                            {{ item.excerpt | strip_html | truncate: 150 }}
+                        {% endif %}
+                    </p>
+                </div>
+
+                {% if item.image and card_style != 'stroke' %}
+                    <img src="{{ item.image }}" class="card-thumbnail" alt="{{ item.title }}">
+                {% endif %}
+            </a>
+        {% endfor %}
+    </div>
+{% endcapture %}
+
+
+<section class="section">
+    
+    {% if layout_type == "column" %}
+        <div class="grid-title"> 
+            <div class="resume-left">
+                <h2 class="heading {{ align_class }}">{{ include.title }}</h2>
                 {% if include.viewall-url %}
                     <a href="{{ include.viewall-url }}" class="body-small">view All →</a>
                 {% endif %}
             </div>
 
             <div class="resume-right">
-                <div class="grid-1">
-                    
-                    {% for item in include.items %}
-                        <a {% if item.url %} href="{{ item.url }}" {% endif %} 
-                        class="card card-underline card-row {% unless item.url %}state-null{% endunless %}">
-                            
-                            <div class="card-content">
-                                <h3 class="card-title">{{ item.title }}</h3>
-                                <p class="card-body">
-                                    {% if item.description %}
-                                        {{ item.description }}
-                                    {% else %}
-                                        {{ item.excerpt | strip_html | truncate: 150 }}
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
+                {{ cards_content }}
+            </div> 
+        </div>
 
-                    {% endfor %} 
-                </div>
-            </div> </div> </section>
-    
-{% endif %}
+    {% else %}
+        <div class="section-header {{ align_class }}">
+            <h2 class="subheading">{{ include.title }}</h2>
+            {% if include.viewall-url %}
+                <a href="{{ include.viewall-url }}" class="view-all">view All →</a>
+            {% endif %}
+        </div>
+        
+        {{ cards_content }}
+    {% endif %}
+
+</section>
