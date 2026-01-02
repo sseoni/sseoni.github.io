@@ -1,7 +1,9 @@
-.hero-content {
+.hero {
     width: 100%; 
     background-color: var(--color-white);
-    
+}
+
+.hero-content {
     display: flex;
     justify-content: center;
     flex-direction: column;
