@@ -29,10 +29,11 @@ title: Home
 <main class="container main-wide">
 
     {% include card-section.html
-        section-type="column"
+        section-type="row"
         title="Highlighted Posts"
         viewall-url="/blog/"
         items=site.data.highlighted.posts
+        grid-type="grid-4"
         card-type="stroke"
     %}
 

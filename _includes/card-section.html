@@ -8,6 +8,9 @@ title (필수)
 section-type (필수)
     전체적인 배치 모양 결정
     ""column"" (이력서형 2단), ""row"" (일반형 1단)"
+grid-type (선택)
+    section-type이 row인 경우 카드 배치 선택
+    ""grid-4"" (카드4개 수평배치), 생략 시 기본값 (grid-1)
 card-type (선택)
     개별 카드 디자인 결정
     ""stroke"" (박스형, 이미지 X), 생략 시 기본값 (밑줄형, 이미지 O)"
@@ -26,7 +29,7 @@ viewall-url (선택)
             {% endif %}
         </div>
 
-        <div class="grid-1">
+        <div class="{% if include.grid-type == 'grid-4' %}grid-4{% else %}grid-1{% endif %} ">
             
             {% for item in include.items %}
                 
