@@ -57,6 +57,8 @@ main.container { padding-top: 30px; padding-bottom: 30px; }
 
 .view-all { grid-column: 3; justify-self: end; }
 
+.profile-header { display: flex; flex-direction: column; gap: 16px; }
+
 /* ========================================= MOBILE RESPONSIVE (LAYOUT) ========================================= */
 @media (max-width: 768px) { main.container { padding: 0 20px; }
   .grid-4 { grid-template-columns: 1fr; }

@@ -113,6 +113,11 @@ main.container {
     justify-self: end;
 }
 
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
 /* =========================================
    MOBILE RESPONSIVE (LAYOUT)
