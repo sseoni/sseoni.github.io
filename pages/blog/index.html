@@ -1,0 +1,14 @@
+---
+layout: blog
+title: blog main
+permalink: /blog/
+---
+<main class="container blog-wide">
+    {% include card-section.html
+        title="All Posts"
+        items=site.posts
+        section-type="row"
+        align-title="text-left"
+        card-type="underline"
+    %}
+</main>
