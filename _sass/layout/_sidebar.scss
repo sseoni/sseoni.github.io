@@ -5,11 +5,12 @@
     width: 280px;
     flex-shrink: 0;
     padding: 50px 30px;
-    border: 1px solid var(--container-strok);
+    border: 1px solid var(--container-stroke);
 }
 
 .sidebar-section {
     border-bottom: 1px solid var(--container-strok);
+    padding: 5px;
 }
 
 .sidebar-section:last-child {

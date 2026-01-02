@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+    <div class="container nav-content">
+        <a href="/" class="logo">👩🏻‍💻 🐶 ✨ 🥐</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-links" id="navMenu">
+            <li>
+                <a href="/" 
+                   class="btn btn-small btn-transparent ">
+                   Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/blog/" 
+                   class="btn btn-small btn-transparent active">
+                   Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="/portfolio/" 
+                   class="btn btn-small btn-transparent ">
+                   Portfolio
+                </a>
+            </li>
+
+            <li>
+                <a href="/contact/" 
+                   class="btn btn-small btn-transparent ">
+                   Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('open'); // 햄버거 모양 애니메이션용
+    });
+</script>
+
+    <div class="container blog-layout">
+    
+    <aside class="sidebar">
+  <button class="sidebar-toggle" onclick="toggleSidebar()">
+      Categories
+  </button>
+
+  <div class="sidebar-content" id="sidebarContent">
+      
+      
+      <div class="sidebar-section">
+          
+          <h3 class="sidebar-heading">
+              
+                  <a href="/blog/" 
+                     class="active">
+                     View All
+                  </a>
+              
+          </h3>
+
+          
+          <ul class="sidebar-list">
+              
+          </ul>
+          
+
+      </div>
+      
+      <div class="sidebar-section">
+          
+          <h3 class="sidebar-heading">
+              
+                  Study Log
+              
+          </h3>
+
+          
+          <ul class="sidebar-list">
+              
+              <li>
+                  <a href="/blog/study-log/ai-ml/" 
+                     class="sidebar-link "
+                     >
+                     AI / ML / ML-Ops
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="/blog/study-log/nlp/" 
+                     class="sidebar-link "
+                     >
+                     Language Model
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="/blog/study-log/docker/" 
+                     class="sidebar-link "
+                     >
+                     Docker
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="/blog/study-log/aws/" 
+                     class="sidebar-link "
+                     >
+                     AWS
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="/blog/study-log/error-handling/" 
+                     class="sidebar-link "
+                     >
+                     Error handling
+                  </a>
+              </li>
+              
+          </ul>
+          
+
+      </div>
+      
+      <div class="sidebar-section">
+          
+          <h3 class="sidebar-heading">
+              
+                  Paper Review
+              
+          </h3>
+
+          
+          <ul class="sidebar-list">
+              
+              <li>
+                  <a href="/blog/paper-review/open-source/" 
+                     class="sidebar-link "
+                     >
+                     Open Source
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="/blog/paper-review/community/" 
+                     class="sidebar-link "
+                     >
+                     Community
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="/blog/paper-review/education/" 
+                     class="sidebar-link "
+                     >
+                     Education
+                  </a>
+              </li>
+              
+          </ul>
+          
+
+      </div>
+      
+      <div class="sidebar-section">
+          
+          <h3 class="sidebar-heading">
+              
+                  Experiences
+              
+          </h3>
+
+          
+          <ul class="sidebar-list">
+              
+              <li>
+                  <a href="/blog/experiences/projects/" 
+                     class="sidebar-link "
+                     >
+                     Projects
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="/blog/experiences/educations/" 
+                     class="sidebar-link "
+                     >
+                     Educations
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="/blog/experiences/engagements/" 
+                     class="sidebar-link "
+                     >
+                     Engagements
+                  </a>
+              </li>
+              
+          </ul>
+          
+
+      </div>
+      
+      <div class="sidebar-section">
+          
+          <h3 class="sidebar-heading">
+              
+                  Quick Links
+              
+          </h3>
+
+          
+          <ul class="sidebar-list">
+              
+              <li>
+                  <a href="" 
+                     class="sidebar-link "
+                     target="_blank" rel="noopener noreferrer">
+                     
+                  </a>
+              </li>
+              
+          </ul>
+          
+
+      </div>
+      
+      
+  </div>
+</aside>
+
+<script>
+function toggleSidebar() {
+  document.getElementById('sidebarContent').classList.toggle('open');
+  document.querySelector('.sidebar-toggle').classList.toggle('open');
+}
+</script>
+
+    <main class="blog-content">
+        <!--
+items (필수)
+    카드에 뿌려줄 데이터
+    "site.posts, site.data.portfolio.awards 등
+title (필수)
+    섹션의 큰 제목
+    ""Projects"", ""Awards"", ""Educations"" 등
+section-type (필수)
+    전체적인 배치 모양 결정
+    ""column"" (이력서형 2단), ""row"" (일반형 1단)"
+grid-type (선택)
+    section-type이 row인 경우 카드 배치 선택
+    ""grid-4"" (카드4개 수평배치), 생략 시 기본값 (grid-1)
+card-type (선택)
+    개별 카드 디자인 결정
+    ""stroke"" (박스형, 이미지 X), 생략 시 기본값 (밑줄형, 이미지 O)"
+viewall-url (선택)
+    제목 옆 'View All →' 버튼 링크
+-->
+
+
+    <section class="section">
+        
+        <div class="section-header">
+            <h2 class="subheading">All Posts</h2>
+            
+            
+        </div>
+
+        <div class="grid-1 ">
+            
+             
+        </div>
+    </section>
+
+
+    </main>
+    
+</div>
+
+    <footer class="footer">
+        <section class="section footer-layout">
+    <h2 class="heading">Contacts</h2>
+    <div class="text-links">
+        <a href="mailto:fdsa801@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/seohyun-shin-4529b330b/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/sseoni" target="_blank">Github</a>
+    </div>
+</section>
+    </footer>
+
+</body>
+</html>

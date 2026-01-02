@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+    <div class="container nav-content">
+        <a href="/" class="logo">👩🏻‍💻 🐶 ✨ 🥐</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-links" id="navMenu">
+            <li>
+                <a href="/" 
+                   class="btn btn-small btn-transparent active">
+                   Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/blog/" 
+                   class="btn btn-small btn-transparent ">
+                   Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="/portfolio/" 
+                   class="btn btn-small btn-transparent ">
+                   Portfolio
+                </a>
+            </li>
+
+            <li>
+                <a href="/contact/" 
+                   class="btn btn-small btn-transparent ">
+                   Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('open'); // 햄버거 모양 애니메이션용
+    });
+</script>
+
+    <style>
+    body {
+        background-color: var(--background-gray); 
+    }
+</style>
+
+<div class="container">
+    <header class="hero-content">
+        <img class="hero-img" src="/assets/images/snowman.png" alt="Hero Image">
+        
+        <h1 class="introduction">
+            Design and engineer LLM systems<br>
+            grounded in linguistic domain knowledge,<br>
+            robust and explainable AI principles.
+        </h1>
+        
+        <div class="btn-group">
+            <a href="/blog/" class="btn btn-big btn-fill">Blog</a>    
+            <a href="/portfolio/" class="btn btn-big btn-fill">Portfolio</a>    
+        </div>
+    </header>
+</div>
+
+<main class="container main-wide">
+
+    <!--
+items (필수)
+    카드에 뿌려줄 데이터
+    "site.posts, site.data.portfolio.awards 등
+title (필수)
+    섹션의 큰 제목
+    ""Projects"", ""Awards"", ""Educations"" 등
+section-type (필수)
+    전체적인 배치 모양 결정
+    ""column"" (이력서형 2단), ""row"" (일반형 1단)"
+grid-type (선택)
+    section-type이 row인 경우 카드 배치 선택
+    ""grid-4"" (카드4개 수평배치), 생략 시 기본값 (grid-1)
+card-type (선택)
+    개별 카드 디자인 결정
+    ""stroke"" (박스형, 이미지 X), 생략 시 기본값 (밑줄형, 이미지 O)"
+viewall-url (선택)
+    제목 옆 'View All →' 버튼 링크
+-->
+
+
+    <section class="section">
+        
+        <div class="section-header">
+            <h2 class="subheading">Highlighted Posts</h2>
+            
+            
+                <a href="/blog/" class="view-all">view All →</a>
+            
+        </div>
+
+        <div class="grid-4 ">
+            
+            
+                
+            <a 
+            class="card 
+                   card-stroke 
+                   card-row 
+                   state-null">
+                   
+                    <div class="card-content">
+                        <h3 class="card-title">SWI:TCH SW/AI 연합 창업 공모전 금상 </h3>
+                        <p class="card-body">
+                            
+                                무인매장 전용 지능형 CCTV 서비스
+                            
+                        </p>
+                    </div>
+
+                    
+                </a>
+
+             
+        </div>
+    </section>
+
+
+
+    <!--
+items (필수)
+    카드에 뿌려줄 데이터
+    "site.posts, site.data.portfolio.awards 등
+title (필수)
+    섹션의 큰 제목
+    ""Projects"", ""Awards"", ""Educations"" 등
+section-type (필수)
+    전체적인 배치 모양 결정
+    ""column"" (이력서형 2단), ""row"" (일반형 1단)"
+grid-type (선택)
+    section-type이 row인 경우 카드 배치 선택
+    ""grid-4"" (카드4개 수평배치), 생략 시 기본값 (grid-1)
+card-type (선택)
+    개별 카드 디자인 결정
+    ""stroke"" (박스형, 이미지 X), 생략 시 기본값 (밑줄형, 이미지 O)"
+viewall-url (선택)
+    제목 옆 'View All →' 버튼 링크
+-->
+
+
+    <section class="section">
+        
+        <div class="section-header">
+            <h2 class="subheading">Recent Projects</h2>
+            
+            
+                <a href="/blog/projects/" class="view-all">view All →</a>
+            
+        </div>
+
+        <div class="grid-1 ">
+            
+            
+                
+            <a 
+            class="card 
+                   card-stroke 
+                   card-row 
+                   state-null">
+                   
+                    <div class="card-content">
+                        <h3 class="card-title">SWI:TCH SW/AI 연합 창업 공모전 금상 </h3>
+                        <p class="card-body">
+                            
+                                무인매장 전용 지능형 CCTV 서비스
+                            
+                        </p>
+                    </div>
+
+                    
+                </a>
+
+             
+        </div>
+    </section>
+
+
+
+</main>
+
+    <footer class="footer">
+        <section class="section footer-layout">
+    <h2 class="heading">Contacts</h2>
+    <div class="text-links">
+        <a href="mailto:fdsa801@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/seohyun-shin-4529b330b/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/sseoni" target="_blank">Github</a>
+    </div>
+</section>
+    </footer>
+
+</body>
+</html>

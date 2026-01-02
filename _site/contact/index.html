@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+    <div class="container nav-content">
+        <a href="/" class="logo">👩🏻‍💻 🐶 ✨ 🥐</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-links" id="navMenu">
+            <li>
+                <a href="/" 
+                   class="btn btn-small btn-transparent ">
+                   Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/blog/" 
+                   class="btn btn-small btn-transparent ">
+                   Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="/portfolio/" 
+                   class="btn btn-small btn-transparent ">
+                   Portfolio
+                </a>
+            </li>
+
+            <li>
+                <a href="/contact/" 
+                   class="btn btn-small btn-transparent active">
+                   Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('open'); // 햄버거 모양 애니메이션용
+    });
+</script>
+
+    
+    
+</body>
+</html>
