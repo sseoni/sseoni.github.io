@@ -1,6 +1,6 @@
 <!--
 필수
- - items
+ -  
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
  - title
@@ -38,13 +38,22 @@
                 
                 <div class="card-content">
                     <h3 class="card-title">{{ item.title }}</h3>
+                    
                     <p class="card-body">
                         {% if item.description %}
-                            {{ item.description }}
+                            {{ item.description | newline_to_br }}
                         {% else %}
                             {{ item.excerpt | strip_html | truncate: 150 }}
                         {% endif %}
                     </p>
+
+                    {% if item.tags.size > 0 %}
+                        <div class="card-tags">
+                            {% for tag in item.tags %}
+                                <span class="tag-item">#{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
 
                 {% if item.image and card_style != 'stroke' %}
@@ -57,7 +66,6 @@
 
 
 <section class="section">
-    
     {% if layout_type == "column" %}
         <div class="grid-title"> 
             <div class="resume-left">
@@ -66,12 +74,10 @@
                     <a href="{{ include.viewall-url }}" class="body-small">view All →</a>
                 {% endif %}
             </div>
-
             <div class="resume-right">
                 {{ cards_content }}
             </div> 
         </div>
-
     {% else %}
         <div class="section-header">
             <h2 class="{{ align_class }}">{{ include.title }}</h2>
@@ -79,8 +85,6 @@
                 <a href="{{ include.viewall-url }}" class="view-all">view All →</a>
             {% endif %}
         </div>
-        
         {{ cards_content }}
     {% endif %}
-
 </section>

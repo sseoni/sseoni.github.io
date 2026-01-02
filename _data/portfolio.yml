@@ -1,6 +1,9 @@
 skills:
   - title: Python
-    description: 객체지향 프로그래밍에 대해 이해하고 있습니다. 알고리즘 문제를 해결할 수 있습니다. PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있습니다.
+    description:
+      객체지향 프로그래밍에 대해 이해하고 있습니다.
+      알고리즘 문제를 해결할 수 있습니다.
+      PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있습니다.
     tags: [LangChain, MCP, TensorFlow, Keras]
 
   - title: SQL / PL/SQL
@@ -23,17 +26,17 @@ awards:
   - title: SWI:TCH SW/AI 연합 창업 공모전 금상 
     description: 무인매장 전용 지능형 CCTV 서비스
     date: 2024.09
-    url:
+    url: /blog/project/24090001
 
   - title: AWS AI & ML Ops Application(심화과정) 모델 부분 최우수
     description: 위해물품 탐지 인공지능 서비스
     date: 2024.05
-    url:
+    url: /blog/project/24050001
     
   - title: AWS ABC LIVING LAB 해커톤 대상
     description: 도시농업 활성화 통합 플랫폼
     date: 2024.03
-    url:
+    url: /blog/project/24030001
 
 educations: 
   - title: 프랑스언어문화학과 / 소프트웨어융합전공 (복수전공)
