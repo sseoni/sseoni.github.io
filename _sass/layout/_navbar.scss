@@ -3,8 +3,9 @@
    ========================================= */
 .navbar {
     background-color: var(--color-white);
-    padding: 20px 50px;
+    padding: 0 50px;
     position: sticky; top: 0; z-index: 1000;
+    border: 1px solid var(--stroke-gray);
 }
 
 .nav-content {
