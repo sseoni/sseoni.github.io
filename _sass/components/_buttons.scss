@@ -41,7 +41,7 @@
 }
 
 .btn-fill:hover {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 
@@ -51,7 +51,8 @@
 }
 
 .btn-transparent:hover {
-    background-color: var(--container-stroke);
+    background-color: var(--background-gray);
+    opacity: 0.7;
 }
 
 
