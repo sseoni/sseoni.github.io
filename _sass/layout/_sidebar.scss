@@ -1,0 +1,121 @@
+/* =========================================
+   SIDEBAR LAYOUT
+   ========================================= */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 50px 30px;
+    border: 1px solid var(--stroke-gray);
+}
+
+.sidebar-section {
+    border-bottom: 1px solid var(--stroke-gray);
+}
+
+.sidebar-section:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   TYPOGRAPHY & LINKS
+   ========================================= */
+.sidebar-heading a {
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-black);
+
+    padding: 10px 0;
+    display: block;
+
+    border-radius: 8px; 
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} 
+
+.sidebar-link {
+    color: var(--color-black);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body-small);
+    line-height: var(--lh-body);
+
+    padding: 8px;
+    display: block;
+
+    border-radius: 8px; 
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active,
+.sidebar-heading a:hover,
+.sidebar-heading a.active {
+    background-color: var(--background-gray);
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE (모바일 토글)
+   ========================================= */
+.sidebar-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--stroke-gray);
+    }
+
+    .sidebar-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 15px 0;
+        
+        background: none;
+        border: none;
+        
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--color-black);
+        cursor: pointer;
+    }
+    
+    /* 토글 화살표 아이콘 */
+    .sidebar-toggle::after {
+        content: "▼"; /* 또는 아이콘 사용 */
+        font-size: 12px;
+        transition: transform 0.3s;
+    }
+    
+    /* 열렸을 때 화살표 뒤집기 */
+    .sidebar-toggle.open::after {
+        transform: rotate(180deg);
+    }
+
+    /* 내용물 숨기기/보이기 */
+    .sidebar-content {
+        display: none; /* 기본 숨김 */
+        padding-bottom: 20px;
+    }
+    
+    .sidebar-content.open {
+        display: block; /* 열리면 보임 */
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}

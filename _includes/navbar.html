@@ -1,12 +1,51 @@
 <nav class="navbar">
-    <div class="nav-content">
-        <div class="logo">👩🏻‍💻 🐶 ✨ 🥐</div>
-            
-        <ul class="nav-links">
-            <li href="/blog/">Home</li>
-            <li href="/blog/">Blog</li>
-            <li href="/portfolio/">Portfolio</li>
-            <li href="/contact/">Contact</li>
+    <div class="container nav-content">
+        <a href="/" class="logo">👩🏻‍💻 🐶 ✨ 🥐</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-links" id="navMenu">
+            <li>
+                <a href="/" 
+                   class="btn btn-small btn-transparent {% if page.url == '/' %}active{% endif %}">
+                   Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/blog/" 
+                   class="btn btn-small btn-transparent {% if page.url contains '/blog/' %}active{% endif %}">
+                   Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="/portfolio/" 
+                   class="btn btn-small btn-transparent {% if page.url contains '/portfolio/' %}active{% endif %}">
+                   Portfolio
+                </a>
+            </li>
+
+            <li>
+                <a href="/contact/" 
+                   class="btn btn-small btn-transparent {% if page.url contains '/contact/' %}active{% endif %}">
+                   Contact
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
+
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('open'); // 햄버거 모양 애니메이션용
+    });
+</script>

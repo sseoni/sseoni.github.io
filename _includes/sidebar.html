@@ -1,54 +1,47 @@
 <aside class="sidebar">
-  
   <button class="sidebar-toggle" onclick="toggleSidebar()">
-    <span class="toggle-text">📂 목차 보기</span>
-    <span class="toggle-icon">▼</span>
+      Categories
   </button>
 
-  <div id="mobile-menu" class="sidebar-content">
-    {% for section in site.data.sidebar %}
-    <div class="sidebar-section">
+  <div class="sidebar-content" id="sidebarContent">
       
-      <h3 class="sidebar-heading">
-        {% if section.url %}
-        <a href="{{ item.url }}" 
-          class="sidebar-link {% if page.url contains item.url %}active{% endif %}"
-          {% if item.new_tab %}target="_blank"{% endif %}> {{ item.title }}
-        </a>
-        {% else %}
-          {{ section.title }}
-        {% endif %}
-      </h3>
+      {% for section in site.data.sidebar %}
+      <div class="sidebar-section">
+          
+          <h3 class="sidebar-heading">
+              {% if section.url %}
+                  <a href="{{ section.url }}" 
+                     class="{% if page.url == section.url %}active{% endif %}">
+                     {{ section.title }}
+                  </a>
+              {% else %}
+                  {{ section.title }}
+              {% endif %}
+          </h3>
 
-      {% if section.items.size > 0 %}
-      <ul class="sidebar-list">
-        {% for item in section.items %}
-        <li>
-          <a href="{{ item.url }}" class="sidebar-link {% if page.url contains item.url %}active{% endif %}">
-            {{ item.title }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
+          {% if section.items %}
+          <ul class="sidebar-list">
+              {% for item in section.items %}
+              <li>
+                  <a href="{{ item.url }}" 
+                     class="sidebar-link {% if page.url contains item.url %}active{% endif %}"
+                     {% if item.new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                     {{ item.title }}
+                  </a>
+              </li>
+              {% endfor %}
+          </ul>
+          {% endif %}
 
-    </div>
-    {% endfor %}
+      </div>
+      {% endfor %}
+      
   </div>
-
 </aside>
 
 <script>
 function toggleSidebar() {
-  const menu = document.getElementById('mobile-menu');
-  const btn = document.querySelector('.toggle-icon');
-  
-  menu.classList.toggle('open');
-  
-  if (menu.classList.contains('open')) {
-    btn.textContent = '▲';
-  } else {
-    btn.textContent = '▼';
-  }
+  document.getElementById('sidebarContent').classList.toggle('open');
+  document.querySelector('.sidebar-toggle').classList.toggle('open');
 }
 </script>

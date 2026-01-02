@@ -1,0 +1,100 @@
+/* =========================================
+   CARD BASE (공통 뼈대)
+   ========================================= */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    
+    padding: var(--space-20);
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-title {
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+}
+
+.card-body {
+    color: var(--text-gray);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body-small);
+    line-height: var(--lh-body);
+    word-break: keep-all;
+    
+    /* 긴 글 2줄 말줄임표 처리 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-tags {
+    font-size: 13px;
+    color: #999;
+    margin-top: auto;
+}
+
+
+/* =========================================
+   VARIATIONS (모양 종류)
+   ========================================= */
+.card-stroke {
+    background-color: transparent;
+    border: 1px solid var(--stroke-gray);
+    border-radius: var(--radius-small, 8px);
+}
+
+.card-underline {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--stroke-gray);
+    border-radius: 0;
+    
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card-underline:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   LAYOUT MODIFIERS (구조 변경)
+   ========================================= */
+.card-row {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* 가로형일 때 텍스트 영역 */
+.card-row .card-content {
+    flex: 1;             /* 남은 공간 다 차지 */
+    min-width: 0;        /* flex 자식 요소 말줄임표 버그 방지 */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.card.state-null {
+    pointer-events: none;
+    cursor: not-allowed;
+}

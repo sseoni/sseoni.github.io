@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/variables.css">
-    <link rel="stylesheet" href="/css/typography.css">
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
-
-    {% include navbar.html %}
+    
+    <nav class="navbar">...</nav>
 
     {{ content }}
 
-    <div class="footer"> 
-        {% include footer.html %}
-    </div>
+    <footer class="footer">...</footer>
 
 </body>
 </html>

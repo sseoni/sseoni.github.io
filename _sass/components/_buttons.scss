@@ -1,0 +1,87 @@
+/* =========================================
+   BUTTON BASE (공통 뼈대)
+   ========================================= */
+   .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    
+    font-family: inherit;
+}
+
+/* =========================================
+   SIZE MODIFIERS (크기 결정)
+   ========================================= */
+.btn-big {
+    padding: var(--space-10) 24px;
+    font-weight: var(--fw-light);
+    font-size: var(--fs-body);
+    line-height: var(--lh-heading);
+    border-radius: var(--radius-hero);
+}
+
+.btn-small {
+    padding: 5px 10px;
+    font-weight: var(--fw-medium); 
+    font-size: var(--fs-body-small);
+    line-height: var(--lh-body);
+        border-radius: var(--radius-small);
+
+}
+
+/* =========================================
+   COLOR MODIFIERS (색상 결정)
+   ========================================= */
+.btn-fill {
+    background-color: var(--background-gray);
+    color: var(--color-black);
+}
+
+.btn-fill:hover {
+    opacity: 0.8;
+}
+
+
+.btn-transparent {
+    background-color: transparent;
+    color: var(--color-black);
+}
+
+.btn-transparent:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+
+/* =========================================
+   STATE (상태)
+   ========================================= */
+.btn.active {
+    background-color: var(--background-gray);
+    color: var(--color-black);
+    font-weight: var(--fw-bold);
+    pointer-events: none;
+}
+
+.btn.state-null {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.btn-group {
+    display: flex;
+    gap: var(--space-20);
+}
+
+.btn-group-gap10 {
+    display: flex;
+    gap: var(--space-10);
+}
+
+@media (max-width: 768px) {
+    .btn-group {
+        gap: 5px;
+    }
+}

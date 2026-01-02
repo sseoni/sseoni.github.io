@@ -1,0 +1,95 @@
+<!--
+items (필수)
+    카드에 뿌려줄 데이터
+    "site.posts, site.data.portfolio.awards 등
+title (필수)
+    섹션의 큰 제목
+    ""Projects"", ""Awards"", ""Educations"" 등
+section-type (필수)
+    전체적인 배치 모양 결정
+    ""column"" (이력서형 2단), ""row"" (일반형 1단)"
+card-type (선택)
+    개별 카드 디자인 결정
+    ""stroke"" (박스형, 이미지 X), 생략 시 기본값 (밑줄형, 이미지 O)"
+viewall-url (선택)
+    제목 옆 'View All →' 버튼 링크
+-->
+
+{% if include.section-type == "row" %}
+    <section class="section">
+        
+        <div class="section-header">
+            <h2 class="subheading">{{ include.title }}</h2>
+            
+            {% if include.viewall-url %}
+                <a href="{{ include.viewall-url }}" class="view-all">view All →</a>
+            {% endif %}
+        </div>
+
+        <div class="grid-1">
+            
+            {% for item in include.items %}
+                
+            <a {% if item.url %} href="{{ item.url }}" {% endif %}
+            class="card 
+                   {% if include.card-type == 'stroke' %}card-stroke{% else %}card-underline{% endif %} 
+                   card-row 
+                   {% unless item.url %}state-null{% endunless %}">
+                   
+                    <div class="card-content">
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <p class="card-body">
+                            {% if item.description %}
+                                {{ item.description }}
+                            {% else %}
+                                {{ item.excerpt | strip_html | truncate: 150 }}
+                            {% endif %}
+                        </p>
+                    </div>
+
+                    {% if item.image and include.card-type != 'stroke' %}
+                        <img src="{{ item.image }}" class="card-thumbnail" alt="{{ item.title }}">
+                    {% endif %}
+                </a>
+
+            {% endfor %} 
+        </div>
+    </section>
+
+{% elsif include.section-type == "column" %}
+    <section class="section">
+        
+        <div class="grid-title"> 
+        
+            <div class="resume-left">
+                <h2 class="heading">{{ include.title }}</h2>
+                
+                {% if include.viewall-url %}
+                    <a href="{{ include.viewall-url }}" class="body-small">view All →</a>
+                {% endif %}
+            </div>
+
+            <div class="resume-right">
+                <div class="grid-1">
+                    
+                    {% for item in include.items %}
+                        <a {% if item.url %} href="{{ item.url }}" {% endif %} 
+                        class="card card-underline card-row {% unless item.url %}state-null{% endunless %}">
+                            
+                            <div class="card-content">
+                                <h3 class="card-title">{{ item.title }}</h3>
+                                <p class="card-body">
+                                    {% if item.description %}
+                                        {{ item.description }}
+                                    {% else %}
+                                        {{ item.excerpt | strip_html | truncate: 150 }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+
+                    {% endfor %} 
+                </div>
+            </div> </div> </section>
+    
+{% endif %}

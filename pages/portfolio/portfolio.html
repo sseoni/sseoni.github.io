@@ -1,0 +1,60 @@
+---
+layout: default
+title: Portfolio
+permalink: /portfolio/
+---
+
+<div class="container">
+    <header class="hero-content">
+        <img class="hero-img" src="/assets/images/seohyun.png" alt="Hero Image">
+        
+        <h1 class="introduction">Seohyun SHIN</h1>
+        <a href="mailto:fdsa801@gmail.com">fdsa801@gmail.com</a>
+        <div class="btn-group-gap10">
+            <a class="btn btn-small btn-fill">NLP</a>    
+            <a class="btn btn-small btn-fill">MCP-Agent</a> 
+            <a class="btn btn-small btn-fill">Robust</a>    
+            <a class="btn btn-small btn-fill">Explaniable</a> 
+            <a class="btn btn-small btn-fill">AGI</a>    
+        </div>
+    </header>
+</div>
+
+<main class="container portfolio-wide">
+    <section class="section">
+        <div class="section-header">
+            <h2 class="heading">AI / ML Ops Engineer</h2>
+            <p class="body-base">신뢰할 수 있는 AGI를 목표로 Agentic Language Model을 개발합니다.</p>
+        </div>
+
+        {% include card-section.html
+            section-type="column"
+            title="Stacks and Tools"
+            items=site.data.portfolio.skills
+        %}
+        
+        {% include card-section.html
+            section-type="column"
+            title="Projects" 
+            items=site.data.highlighted.projects
+        %}
+
+        {% include card-section.html
+            section-type="column"
+            title="Experiences"
+            items=site.data.highlighted.experiences
+        %}
+
+        {% include card-section.html
+            section-type="column"
+            title="Awards"
+            items=site.data.portfolio.awards
+        %}
+
+        {% include card-section.html
+            section-type="column"
+            title="Educations"
+            items=site.data.portfolio.educations
+        %}
+    </section>
+</main>

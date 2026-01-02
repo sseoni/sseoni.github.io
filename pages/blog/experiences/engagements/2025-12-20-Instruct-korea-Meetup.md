@@ -1,11 +1,14 @@
 ---
 layout: blog
+permalink: /blog/engagements/25122001
+
 title: "Instruct korea Meetup: 포스터 발표 후기"
 date: 2025-12-20
 tags: [행사후기, 가짜연구소]
+summary:
+
 highlight: true
 recent-project: false
-summary:
 ---
 
 12월 20일, 누티드 익선에서 열린 **Instruct Korea 12월 Meetup**에 다녀왔습니다. 제가 속한 **가짜연구소 7기 ‘깃헙에 nlp 잔디심기’** 팀은 이번 행사에서 **<Cherry in the Haystack>** 프로젝트로 포스터 발표를 진행했습니다.

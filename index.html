@@ -1,74 +1,47 @@
 ---
-layout : default
-title : Home
+layout: default
+title: Home
 ---
 
 <style>
     body {
-        background-color: var(--background-gray, #F3F3F1); 
+        background-color: var(--background-gray); 
     }
 </style>
 
 <div class="container">
     <header class="hero-content">
-        <img class="hero-img" src="/assets/snowman.png">
+        <img class="hero-img" src="/assets/images/snowman.png" alt="Hero Image">
         
         <h1 class="introduction">
             Design and engineer LLM systems<br>
             grounded in linguistic domain knowledge,<br>
             robust and explainable AI principles.
         </h1>
+        
         <div class="btn-group">
-            <a href="/blog/" class="btn-pill">Blog</a>    
-            <a href="/portfolio/" class="btn-pill">Portfolio</a>    
+            <a href="/blog/" class="btn btn-big btn-fill">Blog</a>    
+            <a href="/portfolio/" class="btn btn-big btn-fill">Portfolio</a>    
         </div>
     </header>
 </div>
 
 <main class="container main-wide">
-    <section class="section">
-        <div class="section-header">
-            <h2 class="section-title">Highlighted Posts</h2>
-            <a href="/blog/" class="view-all">view All →</a>
-        </div>
-        
-        <div class="grid-4">
-            {% for post in site.posts %}
-                {% if post.highlight == true %}
-                <article class="card">
-                    <a href="{{ post.url }}" style="text-decoration: none; color: inherit;">
-                        <h3 class="card-title">{{ post.title }}</h3>
-                        <p class="card-body">{{ post.excerpt | strip_html | truncate: 100 }}</p>
-                        <small style="color: #888;">{{ post.date | date: "%Y.%m.%d" }}</small>
-                    </a>
-                </article>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </section>
 
-    <section class="section">
-        <div class="section-header">
-            <h2 class="section-title">Main Projects</h2>
-            <a href="/blog/experiences/projects/" class="view-all">view All →</a>
-        </div>
+    {% include card-section.html
+        section-type="column"
+        title="Highlighted Posts"
+        viewall-url="/blog/"
+        items=site.data.highlighted.posts
+        card-type="stroke"
+    %}
 
-        <div class="grid-1">
-            {% for post in site.posts %}
-                {% if post.main-project == true %}
-                <article class="card">
-                    <a href="{{ post.url }}" style="text-decoration: none; color: inherit; display: block;">
-                        <h3 class="card-title">{{ post.title }}</h3>
-                        <p class="card-body">
-                            {% if post.description %}
-                                {{ post.description }}
-                            {% else %}
-                                {{ post.excerpt | strip_html | truncate: 100 }}
-                            {% endif %}
-                        </p>
-                    </a>
-                </article>
-                {% endif %} {% endfor %} </div>
-    </section>
+    {% include card-section.html
+        section-type="row"
+        title="Recent Projects"
+        viewall-url="/blog/projects/"
+        items=site.data.highlighted.projects
+        card-type="stroke"
+    %}
 
-</main>l
+</main>
