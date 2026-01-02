@@ -3,6 +3,7 @@
   items: []
 
 - title: Study Log
+  url: /blog/study-log/
   items:
     - title: AI / ML / ML-Ops
       url: /blog/study-log/ai-ml/
@@ -16,6 +17,7 @@
       url: /blog/study-log/error-handling/
 
 - title: Paper Review
+  url: /blog/paper-review/
   items:
     - title: Open Source
       url: /blog/paper-review/open-source/
@@ -25,6 +27,7 @@
       url: /blog/paper-review/education/
 
 - title: Experiences
+  url: /blog/experiences/
   items:
     - title: Projects
       url: /blog/experiences/projects/

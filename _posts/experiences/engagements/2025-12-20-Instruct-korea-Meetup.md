@@ -1,17 +1,14 @@
 ---
-layout: blog
+layout: post
 permalink: /blog/engagements/25122001
 
 title: "Instruct korea Meetup: 포스터 발표 후기"
 date: 2025-12-20
 tags: [행사후기, 가짜연구소]
 summary:
-
-highlight: true
-recent-project: false
 ---
 
-12월 20일, 누티드 익선에서 열린 **Instruct Korea 12월 Meetup**에 다녀왔습니다. 제가 속한 **가짜연구소 7기 ‘깃헙에 nlp 잔디심기’** 팀은 이번 행사에서 **<Cherry in the Haystack>** 프로젝트로 포스터 발표를 진행했습니다.
+12월 20일, 누티드 익선에서 열린 **Instruct Korea 12월 Meetup**에 다녀왔습니다. 제가 속한 **가짜연구소 7기 ‘깃헙에 nlp 잔디심기’** 팀은 이번 행사에서 ** <Cherry in the Haystack> ** 프로젝트로 포스터 발표를 진행했습니다.
 
 저희 팀은 쏟아지는 정보의 홍수(Haystack) 속에서 나에게 꼭 필요한 지식(Cherry)만 효율적으로 찾아 연결하는 것이 현대 개발자의 생존 핵심이라고 생각했습니다. 이를 해결하기 위해 시작한 것이 바로 **Open Knowledge Map Builder**입니다.
 
@@ -23,6 +20,6 @@ recent-project: false
 
 발표자료 [https://www.genspark.ai/slides?project_id=1d206370-da32-48e4-82d4-e59bb9ca14f3](https://www.genspark.ai/slides?project_id=1d206370-da32-48e4-82d4-e59bb9ca14f3) 
 
-**<Cherry in the Haystack> Waitlist 등록하기** [https://docs.google.com/forms/d/e/1FAIpQLSe_HHQd5ZpszXuOvdu7VcvujuMQgo5oqxH4g4me90RITwdGcg/viewform](https://docs.google.com/forms/d/e/1FAIpQLSe_HHQd5ZpszXuOvdu7VcvujuMQgo5oqxH4g4me90RITwdGcg/viewform)
+<Cherry in the Haystack> Waitlist 등록하기 [https://docs.google.com/forms/d/e/1FAIpQLSe_HHQd5ZpszXuOvdu7VcvujuMQgo5oqxH4g4me90RITwdGcg/viewform](https://docs.google.com/forms/d/e/1FAIpQLSe_HHQd5ZpszXuOvdu7VcvujuMQgo5oqxH4g4me90RITwdGcg/viewform)
 
 #InstructKorea #가짜연구소 #깃잔심 #NLP #CherryInTheHaystack #지식관리 #LLM #BuildInPublic
