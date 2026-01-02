@@ -39,7 +39,7 @@ main.container { padding-top: 30px; padding-bottom: 30px; }
 
 .portfolio-wide { padding-left: 150px; padding-right: 150px; }
 
-.section { padding: 50px 0; }
+.section { padding: 50px 0; gap: 10px; }
 
 .section:last-child { margin-bottom: 0; }
 
