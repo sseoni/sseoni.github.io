@@ -9,8 +9,8 @@ title: Home
     }
 </style>
 
-<div class="hero">
-    <header class="container hero-content">
+<div class="hero-content">
+    <header class="container">
         <img class="hero-img" src="/assets/images/snowman.png" alt="Hero Image">
         
         <h1 class="introduction">
@@ -44,5 +44,10 @@ title: Home
         items=site.data.highlighted.projects
         card-type="stroke"
     %}
+
+
+    <footer class="footer">
+        {% include footer.html %}
+    </footer>
 
 </main>

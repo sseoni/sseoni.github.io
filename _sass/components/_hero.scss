@@ -1,20 +1,21 @@
-.hero {
-    width: 100%; 
-    background-color: var(--color-white);
-}
-
 .hero-content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    
-    text-align: center;
-    
-    padding: 100px 100px;
-    gap: var(--space-20);
+    width: 100%;
+    background-color: var(--color-white);
     
     border-radius: 0px 0px var(--radius-hero) var(--radius-hero);
+    
+    display: flex;
+    justify-content: center; 
+    
+    padding: 100px 0; 
+}
+
+.hero-content .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-20);
 }
 
 .hero-img {
