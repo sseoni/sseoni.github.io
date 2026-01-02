@@ -74,7 +74,7 @@
 
     {% else %}
         <div class="section-header">
-            <h2 class="subheading {{ align_class }}">{{ include.title }}</h2>
+            <h2 class="{{ align_class }}">{{ include.title }}</h2>
             {% if include.viewall-url %}
                 <a href="{{ include.viewall-url }}" class="view-all">view All →</a>
             {% endif %}
