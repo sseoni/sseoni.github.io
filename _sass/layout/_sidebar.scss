@@ -5,12 +5,17 @@
     width: 280px;
     flex-shrink: 0;
     padding: 50px 30px;
-    border: 1px solid var(--background-gray);
+    border-right: 1px solid var(--background-gray);
+
+    position: sticky;
+    top: 0;
+    
+    overflow-y: auto;
 }
 
 .sidebar-section {
     border-bottom: 1px solid var(--background-gray);
-    padding: 5px;
+    padding: 10px 0;
 }
 
 .sidebar-section:last-child {

@@ -86,9 +86,9 @@ main.container { padding-top: 30px; padding-bottom: 30px; }
   .nav-toggle.open span:nth-child(2) { opacity: 0; }
   .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); } }
 /* ========================================= SIDEBAR LAYOUT ========================================= */
-.sidebar { width: 280px; flex-shrink: 0; padding: 50px 30px; border: 1px solid var(--background-gray); }
+.sidebar { width: 280px; flex-shrink: 0; padding: 50px 30px; border-right: 1px solid var(--background-gray); position: sticky; top: 0; overflow-y: auto; }
 
-.sidebar-section { border-bottom: 1px solid var(--background-gray); padding: 5px; }
+.sidebar-section { border-bottom: 1px solid var(--background-gray); padding: 10px 0; }
 
 .sidebar-section:last-child { border-bottom: none; }
 
@@ -127,6 +127,11 @@ main.container { padding-top: 30px; padding-bottom: 30px; }
 
 .icon-row { display: flex; justify-content: center; gap: var(--space-20); font-size: 24px; margin-top: var(--space-20); }
 
+.blog-layout { display: flex; align-items: stretch; min-height: 80vh; }
+
+.blog-content { flex: 1; min-width: 0; }
+
+@media (max-width: 768px) { .blog-layout { flex-direction: column; align-items: flex-start; } }
 /* 3. Components */
 /* ========================================= BUTTON BASE (공통 뼈대) ========================================= */
 .btn { display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s ease; cursor: pointer; text-decoration: none; font-family: inherit; }
