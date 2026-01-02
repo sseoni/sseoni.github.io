@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog
 permalink: /blog/engagements/25122001
 
 title: "Instruct korea Meetup: 포스터 발표 후기"

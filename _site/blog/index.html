@@ -260,26 +260,30 @@ function toggleSidebar() {
     <main class="blog-content">
         <main class="container blog-wide">
     <!--
-items (필수)
+필수
+ - items
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
-title (필수)
+ - title
     섹션의 큰 제목
     ""Projects"", ""Awards"", ""Educations"" 등
-section-type (필수)
+ - section-type
     전체적인 배치 모양 결정
-    ""column"" (이력서형 2단), ""row"" (일반형 1단)"
-grid-type (선택)
-    section-type이 row인 경우 카드 배치 선택
-    ""grid-4"" (카드4개 수평배치), 생략 시 기본값 (grid-1)
-card-type (선택)
-    개별 카드 디자인 결정
-    ""stroke"" (박스형, 이미지 X), 생략 시 기본값 (밑줄형, 이미지 O)"
-viewall-url (선택)
+    ""column"" (portfolio용 2단)
+    ""row"" (일반형 1단)"
+
+선택 (생략시 default 사용)
+ - grid-type
+    ""grid-1""(default)
+    ""grid-4"" (카드4개 수평배치)
+ - card-type
+    ""underline""(default: 밑줄형, 이미지 가능)
+    ""stroke"" (박스형, 이미지 불가)
+ - viewall-url
     제목 옆 'View All →' 버튼 링크
-align-title	선택
-    제목 정렬 방식
-    ""text-left""(default), ""text-center""
+ - align-title
+    ""title-left""(default)
+    ""title-center""
 -->
 
 
@@ -293,8 +297,8 @@ align-title	선택
 <section class="section">
     
     
-        <div class="section-header text-left">
-            <h2 class="subheading">All Posts</h2>
+        <div class="section-header">
+            <h2 class="subheading text-left">All Posts</h2>
             
         </div>
         
