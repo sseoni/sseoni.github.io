@@ -34,8 +34,9 @@
     <div class="{{ grid_class }}">
         {% for item in include.items %}
             <a {% if item.url %} href="{{ item.url }}" {% endif %}
-            class="card card-{{ card_style }} card-row {% unless item.url %}state-null{% endunless %}">
-                
+                class="card card-{{ card_style }} card-row blog-post-card" 
+                data-category="{{ item.categories | first | slugify | default: 'others' }}">
+
                 <div class="card-content">
                     <h3 class="card-title">{{ item.title }}</h3>
                     

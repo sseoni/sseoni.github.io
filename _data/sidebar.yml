@@ -7,8 +7,10 @@
   items:
     - title: AI / ML / ML-Ops
       url: /blog/study-log/ai-ml/
-    - title: Language Model
-      url: /blog/study-log/nlp/
+    - title: Langchain
+      url: /blog/study-log/langchain/
+    - title: Python
+      url: /blog/study-log/python/
     - title: Docker
       url: /blog/study-log/docker/
     - title: AWS
@@ -18,13 +20,6 @@
 
 - title: Paper Review
   url: /blog/paper-review/
-  items:
-    - title: Open Source
-      url: /blog/paper-review/open-source/
-    - title: Community
-      url: /blog/paper-review/community/
-    - title: Education
-      url: /blog/paper-review/education/
 
 - title: Experiences
   url: /blog/experiences/
@@ -35,6 +30,14 @@
       url: /blog/experiences/educations/
     - title: Engagements
       url: /blog/experiences/engagements/
+
+- title: Beyond Code
+  url: /blog/beyond-code/
+  items:
+    - title: AI Insights
+      url: /blog/beyond-code/ai-insights/
+    - title: Personal Moments
+      url: /blog/beyond-code/personal-moments/
 
 - title: Quick Links
   items:

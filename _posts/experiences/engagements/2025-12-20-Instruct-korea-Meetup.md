@@ -1,6 +1,5 @@
 ---
 layout: post
-permalink: /blog/engagements/25122001
 
 title: "Instruct korea Meetup: 포스터 발표 후기"
 date: 2025-12-20
@@ -18,8 +17,8 @@ summary:
 
 저희는 앞으로도 커뮤니티와 함께 만드는 **Build in Public** 방식을 지향합니다. 에이전트를 위한 컨텍스트 마켓이 열릴 미래를 준비하며, 프로젝트 과정을 오픈소스로 꾸준히 공유할 예정입니다. 많은 관심 부탁드립니다!
 
-[발표자료](https://www.genspark.ai/slides?project_id=1d206370-da32-48e4-82d4-e59bb9ca14f3) 
+[🔗 발표자료](https://www.genspark.ai/slides?project_id=1d206370-da32-48e4-82d4-e59bb9ca14f3) 
 
-[Waitlist 등록하기](https://docs.google.com/forms/d/e/1FAIpQLSe_HHQd5ZpszXuOvdu7VcvujuMQgo5oqxH4g4me90RITwdGcg/viewform)
+[🔗 Waitlist 등록하기](https://docs.google.com/forms/d/e/1FAIpQLSe_HHQd5ZpszXuOvdu7VcvujuMQgo5oqxH4g4me90RITwdGcg/viewform)
 
 #InstructKorea #가짜연구소 #깃잔심 #NLP #CherryInTheHaystack #지식관리 #LLM #BuildInPublic

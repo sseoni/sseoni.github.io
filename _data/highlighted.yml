@@ -1,17 +1,37 @@
 posts:
-  - title: SWI:TCH SW/AI 연합 창업 공모전 금상 
-    description: 무인매장 전용 지능형 CCTV 서비스
-    date: 2024.09
-    url:
+  - title: Instruct korea Meetup: 포스터 발표 후기
+    description:
+    date: 2025-12-20
+    url: /blog/engagements/25122001
+    tags: [행사후기, 가짜연구소]
 
+  - title: Dense Passage Retrieval for Open-Domain Question Answering
+    description:
+    date: 2024-12-02
+    url: /blog/paper-review/24120201
+    tags: [논문리뷰, LLM, DPR]
+
+  - title: REALM Retrieval-Augmented Language Model Pre-Training
+    description:
+    date: 2024-12-03
+    url: /blog/paper-review/24120301
+    tags: [논문리뷰, LLM, REALM]
+
+  - title: Long Short-Term Memory
+    description:
+    date: 2024-12-04
+    url: /blog/paper-review/24120401
+    tags: [논문리뷰, LLM, LSTM]
+
+    
 projects:
-  - title: SWI:TCH SW/AI 연합 창업 공모전 금상 
-    description: 무인매장 전용 지능형 CCTV 서비스
-    date: 2024.09
+  - title:
+    description:
+    date:
     url:
 
 experiences:
-  - title: SWI:TCH SW/AI 연합 창업 공모전 금상 
-    description: 무인매장 전용 지능형 CCTV 서비스
-    date: 2024.09
+  - title:
+    description:
+    date:
     url:
