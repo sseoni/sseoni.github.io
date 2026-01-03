@@ -8,15 +8,15 @@
     - title: AI / ML / ML-Ops
       url: /blog/?category=ai-ml
     - title: Langchain
-      url: /blog/study-log/?category=langchain
+      url: /blog/?category=langchain
     - title: Python
-      url: /blog/study-log/?category=python
+      url: /blog/?category=python
     - title: Docker
-      url: /blog/study-log/?category=docker
+      url: /blog/?category=docker
     - title: AWS
-      url: /blog/study-log/?category=aws
+      url: /blog/?category=aws
     - title: Error handling
-      url: /blog/study-log/?category=error-handling
+      url: /blog/?category=error-handling
 
 - title: Paper Review
   url: /blog/?category=paper-review
