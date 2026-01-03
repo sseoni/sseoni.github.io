@@ -3,41 +3,41 @@
   items: []
 
 - title: Study Log
-  url: /blog/study-log/
+  url: /blog/?category=study-log
   items:
     - title: AI / ML / ML-Ops
-      url: /blog/study-log/ai-ml/
+      url: /blog/?category=ai-ml
     - title: Langchain
-      url: /blog/study-log/langchain/
+      url: /blog/study-log/?category=langchain
     - title: Python
-      url: /blog/study-log/python/
+      url: /blog/study-log/?category=python
     - title: Docker
-      url: /blog/study-log/docker/
+      url: /blog/study-log/?category=docker
     - title: AWS
-      url: /blog/study-log/aws/
+      url: /blog/study-log/?category=aws
     - title: Error handling
-      url: /blog/study-log/error-handling/
+      url: /blog/study-log/?category=error-handling
 
 - title: Paper Review
-  url: /blog/paper-review/
+  url: /blog/?category=paper-review
 
 - title: Experiences
-  url: /blog/experiences/
+  url: /blog/?category=experiences
   items:
     - title: Projects
-      url: /blog/experiences/projects/
+      url: /blog/?category=projects
     - title: Educations
-      url: /blog/experiences/educations/
+      url: /blog/?category=educations
     - title: Engagements
-      url: /blog/experiences/engagements/
+      url: /blog/?category=engagements
 
 - title: Beyond Code
-  url: /blog/beyond-code/
+  url: /blog/?category=beyond-code
   items:
     - title: AI Insights
-      url: /blog/beyond-code/ai-insights/
+      url: /blog/?category=ai-insights
     - title: Personal Moments
-      url: /blog/beyond-code/personal-moments/
+      url: /blog/?category=personal-moments
 
 - title: Quick Links
   items:

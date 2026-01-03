@@ -1,14 +1,53 @@
 ---
 layout: blog
-title: blog main
+title: Blog
 permalink: /blog/
 ---
+
 <main class="container blog-wide">
+    
     {% include card-section.html
         title="All Posts"
         items=site.posts
         section-type="row"
-        align-title="text-left"
+        align-title="title-left"
         card-type="underline"
     %}
+
 </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. 주소창에서 '?category=...' 값 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+
+    // 2. 필터링 함수 실행
+    filterPosts(categoryParam || 'all'); // 값이 없으면 'all'로 처리
+});
+
+function filterPosts(category) {
+    const cards = document.querySelectorAll('.blog-post-card');
+    const sectionTitle = document.querySelector('.section-header h2');
+
+    const targetCategory = category.toLowerCase();
+
+    if (sectionTitle) {
+        sectionTitle.innerText = targetCategory === 'all' ? 'All Posts' : category.toUpperCase();
+    }
+
+    cards.forEach(card => {
+        const cardCategories = card.getAttribute('data-category'); 
+
+        if (targetCategory === 'all') {
+            card.style.display = 'flex';
+        } else {
+            if (cardCategories && cardCategories.includes(targetCategory)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        }
+    });
+}
+</script>
