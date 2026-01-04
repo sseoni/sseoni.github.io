@@ -2,5 +2,11 @@ title: Sseoni's gitblog
 description: AI, MLOps, LLM, ProductManager, Engineer
 url: "https://sseoni.github.io"
 baseurl: ""
-permalink: /blog/:categories/:title/
 encoding: "utf-8"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: /blog/:categories/:title/
