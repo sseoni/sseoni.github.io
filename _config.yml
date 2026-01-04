@@ -6,7 +6,94 @@ encoding: "utf-8"
 
 defaults:
   - scope:
-      path: ""
+      path: "_posts/study-log/ai-ml"
       type: "posts"
     values:
+      categories: ["study-log", "ai-ml"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/study-log/langchain"
+      type: "posts"
+    values:
+      categories: ["study-log", "langchain"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/study-log/python"
+      type: "posts"
+    values:
+      categories: ["study-log", "python"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/study-log/docker"
+      type: "posts"
+    values:
+      categories: ["study-log", "docker"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/study-log/aws"
+      type: "posts"
+    values:
+      categories: ["study-log", "aws"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/study-log/error-handling"
+      type: "posts"
+    values:
+      categories: ["study-log", "error-handling"]
+      permalink: /blog/:categories/:title/
+
+
+
+
+  - scope:
+      path: "_posts/paper-review"
+      type: "posts"
+    values:
+      categories: ["paper-review"]
+      permalink: /blog/:categories/:title/
+
+
+
+
+  - scope:
+      path: "_posts/experiences/projects"
+      type: "posts"
+    values:
+      categories: ["experiences", "projects"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/experiences/educations"
+      type: "posts"
+    values:
+      categories: ["experiences", "educations"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/experiences/engagements"
+      type: "posts"
+    values:
+      categories: ["experiences", "engagements"]
+      permalink: /blog/:categories/:title/
+
+
+
+
+  - scope:
+      path: "_posts/beyond-code/insights"
+      type: "posts"
+    values:
+      categories: ["beyond-code", "insights"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/beyond-code/personal-moments"
+      type: "posts"
+    values:
+      categories: ["beyond-code", "personal-moments"]
       permalink: /blog/:categories/:title/
