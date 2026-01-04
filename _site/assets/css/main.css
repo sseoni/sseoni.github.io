@@ -160,7 +160,7 @@ main.container { padding-top: 30px; padding-bottom: 30px; }
 /* ========================================= CARD BASE (공통 뼈대) ========================================= */
 .card { display: flex; flex-direction: column; gap: var(--space-10); padding: var(--space-20); transition: transform 0.2s ease; text-decoration: none; color: inherit; }
 
-.card:hover { transform: translateY(-2px); }
+.card:hover { opacity: 0.7; }
 
 .card-title { font-weight: var(--fw-regular); font-size: var(--fs-body); line-height: var(--lh-body); }
 

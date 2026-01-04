@@ -35,7 +35,7 @@
         {% for item in include.items %}
             <a {% if item.url %} href="{{ item.url }}" {% endif %}
                 class="card card-{{ card_style }} card-row blog-post-card" 
-                data-category="{{ item.categories | join: ' ' | downcase }}">
+                data-category="{{ category_slugs | strip }}">
 
                 <div class="card-content">
                     <h3 class="card-title">{{ item.title }}</h3>
