@@ -17,34 +17,61 @@ permalink: /blog/
 </main>
 
 <script>
+// 1. Sidebar 타이틀 매핑 정보 생성
+const categoryTitles = {};
+categoryTitles['all'] = 'All Posts';
+
+// 2. 지킬 데이터를 자바스크립트로 한 줄씩 주입
+{% for entry in site.data.sidebar %}
+    
+    // 상위 메뉴 처리
+    {% if entry.url contains '?category=' %}
+        categoryTitles["{{ entry.url | split: '=' | last }}"] = "{{ entry.title }}";
+    {% endif %}
+
+    // 하위 메뉴(items) 처리
+    {% if entry.items %}
+        {% for sub in entry.items %}
+            {% if sub.url contains '?category=' %}
+                categoryTitles["{{ sub.url | split: '=' | last }}"] = "{{ sub.title }}";
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+{% endfor %}
+
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. 주소창에서 '?category=...' 값 가져오기
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get('category');
-
-    // 2. 필터링 함수 실행
-    filterPosts(categoryParam || 'all'); // 값이 없으면 'all'로 처리
+    filterPosts(categoryParam || 'all');
 });
 
 function filterPosts(category) {
     const cards = document.querySelectorAll('.blog-post-card');
     const sectionTitle = document.querySelector('.section-header h2');
     
-    const targetCategory = category.toLowerCase();
+    // 안전하게 소문자로 변환 (없으면 'all')
+    const targetCategory = (category || 'all').toLowerCase();
 
+    // 제목 변경 로직
     if (sectionTitle) {
         if (categoryTitles[targetCategory]) {
             sectionTitle.innerText = categoryTitles[targetCategory];
         } else {
-            sectionTitle.innerText = targetCategory.toUpperCase();
+            // 매핑된 게 없으면 그냥 대문자로 변환해서 표시
+            sectionTitle.innerText = targetCategory === 'all' ? 'All Posts' : targetCategory.toUpperCase();
         }
     }
 
+    // 카드 필터링 로직
     cards.forEach(card => {
+        // ✨ 중요: 아까 HTML에서 설정한 data-category 값을 가져옵니다.
         const cardCategories = card.getAttribute('data-category');
+        
         if (targetCategory === 'all') {
             card.style.display = 'flex';
         } else {
+            // data-category 안에 해당 단어가 포함되어 있는지 확인
             if (cardCategories && cardCategories.includes(targetCategory)) {
                 card.style.display = 'flex';
             } else {
