@@ -111,11 +111,52 @@
 
 /* 코드 블록 (간단 스타일) */
 .post-content pre {
-    background-color: #f8f8f8;
+    background-color: var(--background-gray);
     padding: 16px;
     border-radius: 6px;
     overflow-x: auto; /* 가로 스크롤 */
     margin-bottom: 24px;
     font-family: monospace;
     font-size: 14px;
+}
+
+/* =========================================
+   TABLE STYLE (표 스타일링 추가)
+   ========================================= */
+   .post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 24px;
+    
+    /* 모바일 대응: 표가 너무 넓으면 가로 스크롤 생기게 처리 */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.post-content th, 
+.post-content td {
+    padding: 12px 15px;
+    border: 1px solid var(--stroke-gray);
+    text-align: left;
+    font-size: 15px;
+}
+
+/* 헤더 (제목 칸) 스타일 */
+.post-content th {
+    background-color: var(--background-gray);
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid var(--stroke-gray);
+}
+
+/* 본문 행 (내용 칸) 스타일 */
+.post-content td {
+    color: #555;
+}
+
+/* (선택사항) 짝수 줄마다 배경색 살짝 넣어주기 (Zebra Striping) */
+.post-content tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.015);
 }
