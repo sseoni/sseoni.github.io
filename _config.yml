@@ -6,45 +6,83 @@ encoding: "utf-8"
 
 defaults:
   - scope:
-      path: "_posts/study-log/ai-ml"
+      path: "_posts/ai-ml/00-Intro"
       type: "posts"
     values:
-      categories: ["study-log", "ai-ml"]
+      categories: ["ai-ml", "00-Intro"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/study-log/langchain"
+      path: "_posts/ai-ml/01-ai-foundations"
       type: "posts"
     values:
-      categories: ["study-log", "langchain"]
+      categories: ["ai-ml", "01-ai-foundations"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/study-log/python"
+      path: "_posts/ai-ml/02-classical-ml"
       type: "posts"
     values:
-      categories: ["study-log", "python"]
+      categories: ["ai-ml", "02-classical-ml"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/study-log/docker"
+      path: "_posts/ai-ml/03-deep-learning"
       type: "posts"
     values:
-      categories: ["study-log", "docker"]
+      categories: ["ai-ml", "03-deep-learning"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/study-log/aws"
+      path: "_posts/ai-ml/04-llm-genai"
       type: "posts"
     values:
-      categories: ["study-log", "aws"]
+      categories: ["ai-ml", "04-llm-genai"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/study-log/error-handling"
+      path: "_posts/ai-ml/05-ml-engineering"
       type: "posts"
     values:
-      categories: ["study-log", "error-handling"]
+      categories: ["ai-ml", "05-ml-engineering"]
+      permalink: /blog/:categories/:title/
+
+
+
+
+  - scope:
+      path: "_posts/cs/langchain"
+      type: "posts"
+    values:
+      categories: ["cs", "langchain"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/cs/python"
+      type: "posts"
+    values:
+      categories: ["cs", "python"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/cs/docker"
+      type: "posts"
+    values:
+      categories: ["cs", "docker"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/cs/aws"
+      type: "posts"
+    values:
+      categories: ["cs", "aws"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/cs/error-handling"
+      type: "posts"
+    values:
+      categories: ["cs", "error-handling"]
       permalink: /blog/:categories/:title/
 
 
