@@ -1,7 +1,7 @@
 ---
 layout: post
 
-title: "1. LangChain 기본 이해"
+title: "LangChain 1. 기본 이해"
 date: 2025-05-05
 tags: [스터디로그, Langchain, NLP, LLM]
 summary:

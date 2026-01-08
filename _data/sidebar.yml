@@ -2,11 +2,25 @@
   url: /blog/
   items: []
 
-- title: Study Log
-  url: /blog/?category=study-log
+- title: AI / ML / LLM
+  url: /blog/?category=ai-ml
   items:
-    - title: AI / ML / ML-Ops
-      url: /blog/?category=ai-ml
+    - title: 00. intro
+      url: /blog/?category=00-Intro
+    - title: 01. AI Foundations
+      url: /blog/?category=01-ai-foundations
+    - title: 02. Classical ML
+      url: /blog/?category=02-classical-ml
+    - title: 03. Deep Learning
+      url: /blog/?category=03-deep-learning
+    - title: 04. LLM / GenAI
+      url: /blog/?category=04-llm-genai
+    - title: 05. ML Engineering
+      url: /blog/?category=05-ml-engineering
+
+- title: Study Log
+  url: /blog/?category=cs
+  items:
     - title: Langchain
       url: /blog/?category=langchain
     - title: Python
