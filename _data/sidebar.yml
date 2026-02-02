@@ -2,59 +2,48 @@
   url: /blog/
   items: []
 
-- title: AI / ML / LLM
-  url: /blog/?category=ai-ml
+- title: AI Research
+  url: /blog/?category=ai-research
   items:
-    - title: 00. intro
-      url: /blog/?category=00-Intro
-    - title: 01. AI Foundations
-      url: /blog/?category=01-ai-foundations
-    - title: 02. Classical ML
-      url: /blog/?category=02-classical-ml
-    - title: 03. Deep Learning
-      url: /blog/?category=03-deep-learning
-    - title: 04. LLM / GenAI
-      url: /blog/?category=04-llm-genai
-    - title: 05. ML Engineering
-      url: /blog/?category=05-ml-engineering
+    - title: Foundations
+      url: /blog/?category=ai-foundations
+    - title: AI / ML
+      url: /blog/?category=ai-ml
+    - title: LLM
+      url: /blog/?category=llm
+    - title: Paper Review
+      url: /blog/?category=paper-review
 
-- title: Study Log
-  url: /blog/?category=cs
+- title: Engineering
+  url: /blog/?category=engineering
   items:
-    - title: Langchain
-      url: /blog/?category=langchain
     - title: Python
       url: /blog/?category=python
-    - title: Docker
-      url: /blog/?category=docker
-    - title: AWS
-      url: /blog/?category=aws
-    - title: Error handling
-      url: /blog/?category=error-handling
+    - title: LangChain
+      url: /blog/?category=langchain
+    - title: MLOps(Docker/AWS)
+      url: /blog/?category=mlops
 
-- title: Paper Review
-  url: /blog/?category=paper-review
-
-- title: Experiences
-  url: /blog/?category=experiences
+- title: Workspace
+  url: /blog/?category=workspace
   items:
     - title: Projects
       url: /blog/?category=projects
-    - title: Educations
-      url: /blog/?category=educations
-    - title: Engagements
-      url: /blog/?category=engagements
+    - title: Dev Log
+      url: /blog/?category=dev-log
+    - title: Retrospectives
+      url: /blog/?category=retrospectives
 
 - title: Beyond Code
   url: /blog/?category=beyond-code
   items:
-    - title: AI Insights
-      url: /blog/?category=ai-insights
-    - title: Personal Moments
-      url: /blog/?category=personal-moments
+    - title: Insights
+      url: /blog/?category=insights
+    - title: Daily
+      url: /blog/?category=daily
 
 - title: Quick Links
   items:
-    - title:
-      url:
-      new_tab: true
+  - title:
+    url:
+    new_tab: true
