@@ -7,9 +7,11 @@
     padding: 50px 30px;
     border-right: 1px solid var(--background-gray);
 
+    position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 20px;
     
+    height: calc(100vh - 40px);
     overflow-y: auto;
 }
 
