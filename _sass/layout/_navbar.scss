@@ -6,6 +6,7 @@
     padding: 20px 50px;
     position: sticky; top: 0; z-index: 1000;
     border-bottom: 1px solid var(--background-gray);
+    overflow: hidden;
 }
 
 .nav-content {
