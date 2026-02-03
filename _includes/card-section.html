@@ -1,6 +1,6 @@
 <!--
 필수
- -  
+ - items
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
  - title
@@ -34,7 +34,11 @@
     <div class="{{ grid_class }}">
         {% for item in include.items %}
             <a {% if item.url %} href="{{ item.url }}" {% endif %}
-            class="card card-{{ card_style }} card-row blog-post-card"
+            {% if page.url contains 'blog' %}
+                class="card card-{{ card_style }} card-row blog-post-card"
+            {% else %}
+                class="card card-{{ card_style }} card-row"
+            {% endif %}
             data-category="{{ item.categories | join: ' ' | downcase }}">
             
                 <div class="card-content">
