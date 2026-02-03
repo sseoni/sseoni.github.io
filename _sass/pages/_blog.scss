@@ -1,6 +1,7 @@
 .blog-layout {
     display: flex;
     align-items: stretch;
+    overflow: hidden;
 
     min-height: 80vh;
 }
@@ -8,6 +9,7 @@
 .blog-content {
     flex: 1;
     min-width: 0;
+    overflow-y: auto;
 }
 
 @media (max-width: 768px) {
