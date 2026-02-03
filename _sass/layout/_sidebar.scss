@@ -13,6 +13,16 @@
     
     height: calc(100vh - 40px);
     overflow-y: auto;
+
+    /* 크롬, 사파리, 오페라 */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* IE, 엣지, 파이어폭스 */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
 }
 
 .sidebar-section {
