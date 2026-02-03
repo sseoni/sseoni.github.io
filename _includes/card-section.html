@@ -34,7 +34,7 @@
     <div class="{{ grid_class }}">
         {% for item in include.items %}
             <a {% if item.url %} href="{{ item.url }}" {% endif %}
-            class="card card-{{ card_style }} card-row {% if page.url contains 'blog' %}blog-post-card{% endif %}"
+            class="card card-{{ card_style }} card-row {% if page.url contains 'blog' %}blog-post-card{% endif %} {% if not item.url %}state-null{% endif %}"
             data-category="{{ item.categories | join: ' ' | downcase }}">
             
                 <div class="card-content">

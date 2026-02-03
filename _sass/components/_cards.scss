@@ -4,7 +4,6 @@
 .card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-10);
     
     padding: var(--space-20);
     transition: transform 0.2s ease;
@@ -16,6 +15,13 @@
     opacity: 0.7;
 }
 
+.card.state-null {
+    cursor: not-allowed;
+}
+
+/* =========================================
+   CARD TYPO (글자 모양)
+   ========================================= */
 .card-title {
     font-weight: var(--fw-regular);
     font-size: var(--fs-body);
@@ -97,9 +103,4 @@
     border-radius: 5px;
     flex-shrink: 0;
     object-fit: cover;
-}
-
-.card.state-null {
-    pointer-events: none;
-    cursor: not-allowed;
 }
