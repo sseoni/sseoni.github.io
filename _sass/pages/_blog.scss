@@ -3,8 +3,7 @@
     align-items: stretch;
     overflow: hidden;
 
-    min-height: 80vh;
-}
+    height: calc(100vh - 60px);}
 
 .blog-content {
     flex: 1;
