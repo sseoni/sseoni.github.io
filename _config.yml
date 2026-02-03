@@ -6,117 +6,79 @@ encoding: "utf-8"
 
 defaults:
   - scope:
-      path: "_posts/ai-ml/00-Intro"
+      path: "_posts/ai-research/ai-foundations"
       type: "posts"
     values:
-      categories: ["ai-ml", "00-Intro"]
+      categories: ["ai-research", "ai-foundations"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/ai-ml/01-ai-foundations"
+      path: "_posts/ai-research/ai-ml"
       type: "posts"
     values:
-      categories: ["ai-ml", "01-ai-foundations"]
+      categories: ["ai-research", "ai-ml"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/ai-ml/02-classical-ml"
+      path: "_posts/ai-research/llm"
       type: "posts"
     values:
-      categories: ["ai-ml", "02-classical-ml"]
+      categories: ["ai-research", "llm"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/ai-ml/03-deep-learning"
+      path: "_posts/ai-research/paper-review"
       type: "posts"
     values:
-      categories: ["ai-ml", "03-deep-learning"]
-      permalink: /blog/:categories/:title/
-
-  - scope:
-      path: "_posts/ai-ml/04-llm-genai"
-      type: "posts"
-    values:
-      categories: ["ai-ml", "04-llm-genai"]
-      permalink: /blog/:categories/:title/
-
-  - scope:
-      path: "_posts/ai-ml/05-ml-engineering"
-      type: "posts"
-    values:
-      categories: ["ai-ml", "05-ml-engineering"]
+      categories: ["ai-research", "paper-review"]
       permalink: /blog/:categories/:title/
 
 
 
 
   - scope:
-      path: "_posts/cs/langchain"
+      path: "_posts/engineering/python"
       type: "posts"
     values:
-      categories: ["cs", "langchain"]
+      categories: ["engineering", "python"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/cs/python"
+      path: "_posts/engineering/langchain"
       type: "posts"
     values:
-      categories: ["cs", "python"]
+      categories: ["engineering", "langchain"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/cs/docker"
+      path: "_posts/engineering/mlops"
       type: "posts"
     values:
-      categories: ["cs", "docker"]
-      permalink: /blog/:categories/:title/
-
-  - scope:
-      path: "_posts/cs/aws"
-      type: "posts"
-    values:
-      categories: ["cs", "aws"]
-      permalink: /blog/:categories/:title/
-
-  - scope:
-      path: "_posts/cs/error-handling"
-      type: "posts"
-    values:
-      categories: ["cs", "error-handling"]
+      categories: ["engineering", "mlops"]
       permalink: /blog/:categories/:title/
 
 
 
 
   - scope:
-      path: "_posts/paper-review"
+      path: "_posts/workspace/projects"
       type: "posts"
     values:
-      categories: ["paper-review"]
-      permalink: /blog/:categories/:title/
-
-
-
-
-  - scope:
-      path: "_posts/experiences/projects"
-      type: "posts"
-    values:
-      categories: ["experiences", "projects"]
+      categories: ["workspace", "projects"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/experiences/educations"
+      path: "_posts/workspace/dev-log"
       type: "posts"
     values:
-      categories: ["experiences", "educations"]
+      categories: ["workspace", "dev-log"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/experiences/engagements"
+      path: "_posts/workspace/retrospectives"
       type: "posts"
     values:
-      categories: ["experiences", "engagements"]
+      categories: ["workspace", "retrospectives"]
       permalink: /blog/:categories/:title/
 
 
@@ -130,8 +92,8 @@ defaults:
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/beyond-code/personal-moments"
+      path: "_posts/beyond-code/personal"
       type: "posts"
     values:
-      categories: ["beyond-code", "personal-moments"]
+      categories: ["beyond-code", "personal"]
       permalink: /blog/:categories/:title/
