@@ -27,6 +27,8 @@ body {
     color: var(--color-black);
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     line-height: 1.6;
+
+    overflow: hidden; /*페이지 전체는 스크롤 안되게하고 nav-bar아래 컨텐츠 영역을 스크롤가능하게 하는게 나을듯 블로그 페이지에서는 nav-bar아래를 사이드바랑 컨텐츠 영역으로 나눠서 각각 스크롤되도록 하기*/
 }
 
 body.layout-blog {
