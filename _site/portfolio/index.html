@@ -5,59 +5,73 @@
 </head>
 <body>
     
-    <nav class="navbar">
-    <div class="container nav-content">
-        <a href="/" class="logo">👩🏻‍💻 🐶 ✨ 🥐</a>
+    <header class="header">
+    <div class="container header-content">
+        
+        <a href="/" class="logo" aria-label="홈으로 이동">
+            👩🏻‍💻 🐶 ✨ 🥐
+        </a>
 
-        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-controls="navMenu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
         
-        <ul class="nav-links" id="navMenu">
-            <li>
-                <a href="/" 
-                   class="btn btn-small btn-transparent ">
-                   Home
-                </a>
-            </li>
+        <nav aria-label="글로벌 내비게이션">
+            <ul class="nav-list" id="navMenu">
+                <li>
+                    <a href="/" 
+                       class="btn btn-small btn-transparent ">
+                       Home
+                    </a>
+                </li>
+    
 
-            <li>
-                <a href="/blog/" 
-                   class="btn btn-small btn-transparent ">
-                   Blog
-                </a>
-            </li>
+                <li>
+                    <a href="/blog/" 
+                       class="btn btn-small btn-transparent ">
+                       Blog
+                    </a>
+                </li>
 
-            <li>
-                <a href="/portfolio/" 
-                   class="btn btn-small btn-transparent active">
-                   Portfolio
-                </a>
-            </li>
+                <li>
+                    <a href="/portfolio/" 
+                       class="btn btn-small btn-transparent active">
+                       Portfolio
+                    </a>
+                </li>
 
-            <li>
-                <a href="/contact/" 
-                   class="btn btn-small btn-transparent ">
-                   Contact
-                </a>
-            </li>
-        </ul>
+                <li>
+                    <a href="/contact/" 
+                       class="btn btn-small btn-transparent ">
+                       Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
     </div>
-</nav>
+</header>
 
 <script>
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
 
     navToggle.addEventListener('click', () => {
+        // 1. 메뉴 보이기/숨기기
         navMenu.classList.toggle('active');
-        navToggle.classList.toggle('open'); // 햄버거 모양 애니메이션용
+        navToggle.classList.toggle('open');
+        
+        // 2. 웹 접근성 업데이트
+        const isOpened = navToggle.classList.contains('open');
+        navToggle.setAttribute('aria-expanded', isOpened);
+        navToggle.setAttribute('aria-label', isOpened ? '메뉴 닫기' : '메뉴 열기');
     });
 </script>
 
-    <div class="hero-content">
+    <div id="container">
+        <div class="hero-content">
     <header class="container">
         <img class="hero-img" src="/assets/images/seohyun.png" alt="Hero Image">
         <div>
@@ -77,13 +91,13 @@
 <main class="container portfolio-wide">
     <section class="section">
         <div class="profile-header">
-            <h2 class="heading">AI / ML Ops Engineer</h2>
-            <p class="body-base">신뢰할 수 있는 AGI를 목표로 Agentic Language Model을 개발합니다.</p>
+            <h2 class="heading">AI system Designer / ML-Ops Engineer</h2>
+            <p class="body-base">신뢰할 수 있는 AGI를 목표로 Agentic system을 기획하고 개발합니다.</p>
         </div>
 
         <!--
 필수
- -  
+ - items
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
  - title
@@ -128,7 +142,7 @@
     <div class="grid-1">
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -161,7 +175,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
             </a>
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -186,7 +200,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
             </a>
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -217,7 +231,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
             </a>
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -250,7 +264,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
             </a>
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -287,7 +301,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
         
         <!--
 필수
- -  
+ - items
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
  - title
@@ -334,7 +348,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
     <div class="grid-1">
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -361,7 +375,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
 
         <!--
 필수
- -  
+ - items
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
  - title
@@ -408,7 +422,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
     <div class="grid-1">
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -435,7 +449,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
 
         <!--
 필수
- -  
+ - items
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
  - title
@@ -480,7 +494,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
     <div class="grid-1">
         
             <a  href="/blog/project/24090001" 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -499,7 +513,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
             </a>
         
             <a  href="/blog/project/24050001" 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -518,7 +532,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
             </a>
         
             <a  href="/blog/project/24030001" 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -545,7 +559,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
 
         <!--
 필수
- -  
+ - items
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
  - title
@@ -590,7 +604,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
     <div class="grid-1">
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -609,7 +623,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
             </a>
         
             <a 
-            class="card card-underline card-row blog-post-card"
+            class="card card-underline card-row  "
             data-category="">
             
                 <div class="card-content">
@@ -635,6 +649,7 @@ PyTorch와 TensorFlow, Keras를 사용해 딥러닝 모델을 구축할 수 있�
 </section>
     </section>
 </main>
+    </div>
 
 </body>
 </html>

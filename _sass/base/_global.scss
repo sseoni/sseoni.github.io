@@ -24,11 +24,14 @@ button {
 }
 
 body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
     color: var(--color-black);
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     line-height: 1.6;
-
-    overflow: hidden; /*페이지 전체는 스크롤 안되게하고 nav-bar아래 컨텐츠 영역을 스크롤가능하게 하는게 나을듯 블로그 페이지에서는 nav-bar아래를 사이드바랑 컨텐츠 영역으로 나눠서 각각 스크롤되도록 하기*/
 }
 
 body.layout-blog {
@@ -44,13 +47,23 @@ body.layout-blog {
    COMMON LAYOUT
    ========================================= */
 .container {
-    max-width: var(--max-width);
     width: 100%;
 }
 
 main.container {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    flex: 1;
+    overflow: hidden; /* 자식이 커져도 컨테이너가 커지지 않도록 */
+    
+    min-height: 0;    /* Flex 자식일 때 높이 계산 버그 방지*/
+    
+    display: flex;    /* 자식한테 높이 물려주기 위해 */
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;           /* 남은 너비 차지 */
+    overflow-y: auto;  /* 부모 크기를 넘기면 스크롤 */
+    height: 100%;
 }
 
 .main-wide {
@@ -135,10 +148,6 @@ main.container {
    MOBILE RESPONSIVE (LAYOUT)
    ========================================= */
 @media (max-width: 768px) {
-    main.container {
-        padding: 0 20px;
-    }
-
     .grid-4 { 
         grid-template-columns: 1fr; 
     }

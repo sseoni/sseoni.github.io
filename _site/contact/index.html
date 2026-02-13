@@ -5,59 +5,74 @@
 </head>
 <body>
     
-    <nav class="navbar">
-    <div class="container nav-content">
-        <a href="/" class="logo">👩🏻‍💻 🐶 ✨ 🥐</a>
+    <header class="header">
+    <div class="container header-content">
+        
+        <a href="/" class="logo" aria-label="홈으로 이동">
+            👩🏻‍💻 🐶 ✨ 🥐
+        </a>
 
-        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-controls="navMenu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
         
-        <ul class="nav-links" id="navMenu">
-            <li>
-                <a href="/" 
-                   class="btn btn-small btn-transparent ">
-                   Home
-                </a>
-            </li>
+        <nav aria-label="글로벌 내비게이션">
+            <ul class="nav-list" id="navMenu">
+                <li>
+                    <a href="/" 
+                       class="btn btn-small btn-transparent ">
+                       Home
+                    </a>
+                </li>
+    
 
-            <li>
-                <a href="/blog/" 
-                   class="btn btn-small btn-transparent ">
-                   Blog
-                </a>
-            </li>
+                <li>
+                    <a href="/blog/" 
+                       class="btn btn-small btn-transparent ">
+                       Blog
+                    </a>
+                </li>
 
-            <li>
-                <a href="/portfolio/" 
-                   class="btn btn-small btn-transparent ">
-                   Portfolio
-                </a>
-            </li>
+                <li>
+                    <a href="/portfolio/" 
+                       class="btn btn-small btn-transparent ">
+                       Portfolio
+                    </a>
+                </li>
 
-            <li>
-                <a href="/contact/" 
-                   class="btn btn-small btn-transparent active">
-                   Contact
-                </a>
-            </li>
-        </ul>
+                <li>
+                    <a href="/contact/" 
+                       class="btn btn-small btn-transparent active">
+                       Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
     </div>
-</nav>
+</header>
 
 <script>
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
 
     navToggle.addEventListener('click', () => {
+        // 1. 메뉴 보이기/숨기기
         navMenu.classList.toggle('active');
-        navToggle.classList.toggle('open'); // 햄버거 모양 애니메이션용
+        navToggle.classList.toggle('open');
+        
+        // 2. 웹 접근성 업데이트
+        const isOpened = navToggle.classList.contains('open');
+        navToggle.setAttribute('aria-expanded', isOpened);
+        navToggle.setAttribute('aria-label', isOpened ? '메뉴 닫기' : '메뉴 열기');
     });
 </script>
 
-    
+    <div id="container">
+        
+    </div>
 
 </body>
 </html>

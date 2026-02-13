@@ -5,288 +5,321 @@
 </head>
 <body>
     
-    <nav class="navbar">
-    <div class="container nav-content">
-        <a href="/" class="logo">👩🏻‍💻 🐶 ✨ 🥐</a>
+    <header class="header">
+    <div class="container header-content">
+        
+        <a href="/" class="logo" aria-label="홈으로 이동">
+            👩🏻‍💻 🐶 ✨ 🥐
+        </a>
 
-        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-controls="navMenu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
         
-        <ul class="nav-links" id="navMenu">
-            <li>
-                <a href="/" 
-                   class="btn btn-small btn-transparent ">
-                   Home
-                </a>
-            </li>
+        <nav aria-label="글로벌 내비게이션">
+            <ul class="nav-list" id="navMenu">
+                <li>
+                    <a href="/" 
+                       class="btn btn-small btn-transparent ">
+                       Home
+                    </a>
+                </li>
+    
 
-            <li>
-                <a href="/blog/" 
-                   class="btn btn-small btn-transparent active">
-                   Blog
-                </a>
-            </li>
+                <li>
+                    <a href="/blog/" 
+                       class="btn btn-small btn-transparent active">
+                       Blog
+                    </a>
+                </li>
 
-            <li>
-                <a href="/portfolio/" 
-                   class="btn btn-small btn-transparent ">
-                   Portfolio
-                </a>
-            </li>
+                <li>
+                    <a href="/portfolio/" 
+                       class="btn btn-small btn-transparent ">
+                       Portfolio
+                    </a>
+                </li>
 
-            <li>
-                <a href="/contact/" 
-                   class="btn btn-small btn-transparent ">
-                   Contact
-                </a>
-            </li>
-        </ul>
+                <li>
+                    <a href="/contact/" 
+                       class="btn btn-small btn-transparent ">
+                       Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
     </div>
-</nav>
+</header>
 
 <script>
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
 
     navToggle.addEventListener('click', () => {
+        // 1. 메뉴 보이기/숨기기
         navMenu.classList.toggle('active');
-        navToggle.classList.toggle('open'); // 햄버거 모양 애니메이션용
+        navToggle.classList.toggle('open');
+        
+        // 2. 웹 접근성 업데이트
+        const isOpened = navToggle.classList.contains('open');
+        navToggle.setAttribute('aria-expanded', isOpened);
+        navToggle.setAttribute('aria-label', isOpened ? '메뉴 닫기' : '메뉴 열기');
     });
 </script>
 
-    <div class="container blog-layout">
-    
+    <div id="container">
+        <div class="container blog-layout">
     <aside class="sidebar">
-  <button class="sidebar-toggle" onclick="toggleSidebar()">
-      Categories
-  </button>
+    
+    <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="카테고리 열기" aria-expanded="false">
+        Categories
+    </button>
 
-  <div class="sidebar-content" id="sidebarContent">
-      
-      
-      <div class="sidebar-section">
-          
-          <h3 class="sidebar-heading">
-              
-                  <a href="/blog/" 
-                     class="active">
-                     View All
-                  </a>
-              
-          </h3>
-
-          
-          <ul class="sidebar-list">
-              
-          </ul>
-          
-
-      </div>
-      
-      <div class="sidebar-section">
-          
-          <h3 class="sidebar-heading">
-              
-                  <a href="/blog/?category=study-log" 
-                     class="">
-                     Study Log
-                  </a>
-              
-          </h3>
-
-          
-          <ul class="sidebar-list">
-              
-              <li>
-                  <a href="/blog/?category=ai-ml" 
-                     class="sidebar-link "
-                     >
-                     AI / ML / ML-Ops
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="/blog/?category=langchain" 
-                     class="sidebar-link "
-                     >
-                     Langchain
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="/blog/?category=python" 
-                     class="sidebar-link "
-                     >
-                     Python
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="/blog/?category=docker" 
-                     class="sidebar-link "
-                     >
-                     Docker
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="/blog/?category=aws" 
-                     class="sidebar-link "
-                     >
-                     AWS
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="/blog/?category=error-handling" 
-                     class="sidebar-link "
-                     >
-                     Error handling
-                  </a>
-              </li>
-              
-          </ul>
-          
-
-      </div>
-      
-      <div class="sidebar-section">
-          
-          <h3 class="sidebar-heading">
-              
-                  <a href="/blog/?category=paper-review" 
-                     class="">
-                     Paper Review
-                  </a>
-              
-          </h3>
-
-          
-
-      </div>
-      
-      <div class="sidebar-section">
-          
-          <h3 class="sidebar-heading">
-              
-                  <a href="/blog/?category=experiences" 
-                     class="">
-                     Experiences
-                  </a>
-              
-          </h3>
-
-          
-          <ul class="sidebar-list">
-              
-              <li>
-                  <a href="/blog/?category=projects" 
-                     class="sidebar-link "
-                     >
-                     Projects
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="/blog/?category=educations" 
-                     class="sidebar-link "
-                     >
-                     Educations
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="/blog/?category=engagements" 
-                     class="sidebar-link "
-                     >
-                     Engagements
-                  </a>
-              </li>
-              
-          </ul>
-          
-
-      </div>
-      
-      <div class="sidebar-section">
-          
-          <h3 class="sidebar-heading">
-              
-                  <a href="/blog/?category=beyond-code" 
-                     class="">
-                     Beyond Code
-                  </a>
-              
-          </h3>
-
-          
-          <ul class="sidebar-list">
-              
-              <li>
-                  <a href="/blog/?category=ai-insights" 
-                     class="sidebar-link "
-                     >
-                     AI Insights
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="/blog/?category=personal-moments" 
-                     class="sidebar-link "
-                     >
-                     Personal Moments
-                  </a>
-              </li>
-              
-          </ul>
-          
-
-      </div>
-      
-      <div class="sidebar-section">
-          
-          <h3 class="sidebar-heading">
-              
-                  Quick Links
-              
-          </h3>
-
-          
-          <ul class="sidebar-list">
-              
-              <li>
-                  <a href="" 
-                     class="sidebar-link "
-                     target="_blank" rel="noopener noreferrer">
-                     
-                  </a>
-              </li>
-              
-          </ul>
-          
-
-      </div>
-      
-      
-  </div>
-</aside>
-
+    <div class="sidebar-content" id="sidebarContent">
+        
+        
+        <div class="sidebar-section">
+            
+            <h3 class="sidebar-heading">
+                
+                    <a href="/blog/" 
+                       class="active">
+                       View All
+                    </a>
+                
+            </h3>
+  
+            
+            <ul class="sidebar-list">
+                
+            </ul>
+            
+  
+        </div>
+        
+        <div class="sidebar-section">
+            
+            <h3 class="sidebar-heading">
+                
+                    <a href="/blog/?category=ai-research" 
+                       class="">
+                       AI Research
+                    </a>
+                
+            </h3>
+  
+            
+            <ul class="sidebar-list">
+                
+                <li>
+                    <a href="/blog/?category=ai-foundations" 
+                       class="sidebar-link "
+                       >
+                       Foundations
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=ai-ml" 
+                       class="sidebar-link "
+                       >
+                       AI / ML
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=llm" 
+                       class="sidebar-link "
+                       >
+                       LLM
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=paper-review" 
+                       class="sidebar-link "
+                       >
+                       Paper Review
+                    </a>
+                </li>
+                
+            </ul>
+            
+  
+        </div>
+        
+        <div class="sidebar-section">
+            
+            <h3 class="sidebar-heading">
+                
+                    <a href="/blog/?category=engineering" 
+                       class="">
+                       Engineering
+                    </a>
+                
+            </h3>
+  
+            
+            <ul class="sidebar-list">
+                
+                <li>
+                    <a href="/blog/?category=python" 
+                       class="sidebar-link "
+                       >
+                       Python
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=langchain" 
+                       class="sidebar-link "
+                       >
+                       LangChain
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=mlops" 
+                       class="sidebar-link "
+                       >
+                       MLOps(Docker/AWS)
+                    </a>
+                </li>
+                
+            </ul>
+            
+  
+        </div>
+        
+        <div class="sidebar-section">
+            
+            <h3 class="sidebar-heading">
+                
+                    <a href="/blog/?category=workspace" 
+                       class="">
+                       Workspace
+                    </a>
+                
+            </h3>
+  
+            
+            <ul class="sidebar-list">
+                
+                <li>
+                    <a href="/blog/?category=projects" 
+                       class="sidebar-link "
+                       >
+                       Projects
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=dev-log" 
+                       class="sidebar-link "
+                       >
+                       Dev Log
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=retrospectives" 
+                       class="sidebar-link "
+                       >
+                       Retrospectives
+                    </a>
+                </li>
+                
+            </ul>
+            
+  
+        </div>
+        
+        <div class="sidebar-section">
+            
+            <h3 class="sidebar-heading">
+                
+                    <a href="/blog/?category=beyond-code" 
+                       class="">
+                       Beyond Code
+                    </a>
+                
+            </h3>
+  
+            
+            <ul class="sidebar-list">
+                
+                <li>
+                    <a href="/blog/?category=insights" 
+                       class="sidebar-link "
+                       >
+                       Insights
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=daily" 
+                       class="sidebar-link "
+                       >
+                       Daily
+                    </a>
+                </li>
+                
+            </ul>
+            
+  
+        </div>
+        
+        <div class="sidebar-section">
+            
+            <h3 class="sidebar-heading">
+                
+                    Quick Links
+                
+            </h3>
+  
+            
+            <ul class="sidebar-list">
+                
+                <li>
+                    <a href="" 
+                       class="sidebar-link "
+                       target="_blank" rel="noopener noreferrer">
+                       
+                    </a>
+                </li>
+                
+            </ul>
+            
+  
+        </div>
+        
+        
+    </div> </aside>
+  
 <script>
-function toggleSidebar() {
-  document.getElementById('sidebarContent').classList.toggle('open');
-  document.querySelector('.sidebar-toggle').classList.toggle('open');
-}
+    function toggleSidebar() {
+        const content = document.getElementById('sidebarContent');
+        const toggleBtn = document.getElementById('sidebarToggle');
+        
+        // 1. 클래스 토글 (보이기/숨기기)
+        content.classList.toggle('open');
+        toggleBtn.classList.toggle('open');
+
+        // 2. 접근성 업데이트 (스크린 리더용)
+        const isOpened = content.classList.contains('open');
+        toggleBtn.setAttribute('aria-expanded', isOpened);
+    }
 </script>
 
-    <main class="blog-content">
+    <main class="container content blog-content">
         <main class="container blog-wide">
     
     <!--
 필수
- -  
+ - items
     카드에 뿌려줄 데이터
     site.posts, site.data.portfolio.awards 등
  - title
@@ -328,9 +361,119 @@ function toggleSidebar() {
         
     <div class="grid-1">
         
-            <a  href="/2026/01/01/knittingcat.html" 
-            class="card card-underline card-row blog-post-card"
+            <a  href="/graphs/info-proc/" 
+            class="card card-underline card-row blog-post-card "
             data-category="">
+            
+                <div class="card-content">
+                    <h3 class="card-title">정보처리기사: 소프트웨어 공학 핵심 요약</h3>
+                    
+                    <p class="card-body">
+                        
+                            
+
+                        
+                    </p>
+
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/blog/engineering/python/python-be/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering python">
+            
+                <div class="card-content">
+                    <h3 class="card-title">[BE] Java 백엔드를 Python(FastAPI)으로 마이그레이션하기</h3>
+                    
+                    <p class="card-body">
+                        
+                            
+
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#스터디로그</span>
+                            
+                                <span class="tag-item">#python</span>
+                            
+                                <span class="tag-item">#cleancode</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/blog/workspace/dev-log/POZ-devlog2/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace dev-log">
+            
+                <div class="card-content">
+                    <h3 class="card-title">[DevLOG 2] Java 백엔드를 Python으로 마이그레이션하는 이유</h3>
+                    
+                    <p class="card-body">
+                        
+                            진행 중이던 프로젝트에서 백엔드 개발자가 탈주(ㅜㅜ)하게 되었다. 팀원이 빠질 때마다 새로운 사람을 구하고, 다시 인수인계를 하며 프로젝트가 지연되는 상황을 지켜보는 것은 큰 스트레스였다. 결국 결단을 내렸다.
+
+
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#프로젝트</span>
+                            
+                                <span class="tag-item">#앱개발</span>
+                            
+                                <span class="tag-item">#PM</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/blog/workspace/dev-log/POZ-devlog1/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace dev-log">
+            
+                <div class="card-content">
+                    <h3 class="card-title">[DevLOG 1] AI 서비스 기획: 모델 최적화보다 사용자 가치에 집중하기</h3>
+                    
+                    <p class="card-body">
+                        
+                            처음 프로젝트를 시작했을 때는 창업 경험을 화려한 스펙으로 만들고 싶었다. 그래서 “우리만의 데이터로, 우리만의 모델을 직접 학습시켜 운영하겠다”는 목표를 세웠다. 이를 위해 데이터를 모으고, 학습시키고, 1%의 정확도를 더 높이기 위해 몇 달의 시간을 쏟아부었다...
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#프로젝트</span>
+                            
+                                <span class="tag-item">#앱개발</span>
+                            
+                                <span class="tag-item">#PM</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/blog/workspace/projects/knittingcat/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace projects">
             
                 <div class="card-content">
                     <h3 class="card-title">[앱 개발]뜨개 기록 통합 관리 앱</h3>
@@ -358,9 +501,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/12/20/Instruct-korea-Meetup.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/workspace/retrospectives/Instruct-korea-Meetup/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace retrospectives">
             
                 <div class="card-content">
                     <h3 class="card-title">Instruct korea Meetup: 포스터 발표 후기</h3>
@@ -387,9 +530,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/10/25/name-rule.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/engineering/python/name-rule/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering python">
             
                 <div class="card-content">
                     <h3 class="card-title">python 이름 규칙</h3>
@@ -418,9 +561,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/09/01/run.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/engineering/mlops/docker-run/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering mlops">
             
                 <div class="card-content">
                     <h3 class="card-title">Docker 실행하기</h3>
@@ -449,9 +592,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/09/01/error1.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/engineering/mlops/docker-error1/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering mlops">
             
                 <div class="card-content">
                     <h3 class="card-title">dockerfile name error, -f flag</h3>
@@ -482,12 +625,12 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/07/23/REC-SYS-chatbot.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/workspace/projects/REC-SYS-chatbot/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace projects">
             
                 <div class="card-content">
-                    <h3 class="card-title">Rec Sys Chatbot</h3>
+                    <h3 class="card-title">MCP-Agent를 사용한 LLM Agent 추천챗봇</h3>
                     
                     <p class="card-body">
                         
@@ -497,14 +640,28 @@ function toggleSidebar() {
                     </p>
 
                     
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#프로젝트</span>
+                            
+                                <span class="tag-item">#챗봇</span>
+                            
+                                <span class="tag-item">#Agent</span>
+                            
+                                <span class="tag-item">#RAG</span>
+                            
+                                <span class="tag-item">#가짜연구소</span>
+                            
+                        </div>
+                    
                 </div>
 
                 
             </a>
         
-            <a  href="/2025/05/31/POZ.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/workspace/projects/POZ/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace projects">
             
                 <div class="card-content">
                     <h3 class="card-title">인공지능 기반 식물 관리 앱 POZ</h3>
@@ -534,9 +691,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/05/31/rfp-agent.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/workspace/projects/rfp-agent/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace projects">
             
                 <div class="card-content">
                     <h3 class="card-title">RFP-Agent: LangGraph와 RAG로 만든 제안서 작성 AI 에이전트</h3>
@@ -565,9 +722,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/05/05/prompttemplate.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/engineering/langchain/prompttemplate/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering langchain">
             
                 <div class="card-content">
                     <h3 class="card-title">Langchain: PromptTemplate</h3>
@@ -598,9 +755,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/05/05/mcp.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/engineering/langchain/mcp/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering langchain">
             
                 <div class="card-content">
                     <h3 class="card-title">MCP 기본 이해</h3>
@@ -633,12 +790,12 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2025/05/05/basic1.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/engineering/langchain/langchain-basic-1/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering langchain">
             
                 <div class="card-content">
-                    <h3 class="card-title">1. LangChain 기본 이해</h3>
+                    <h3 class="card-title">LangChain 1. 기본 이해</h3>
                     
                     <p class="card-body">
                         
@@ -666,9 +823,89 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2024/12/04/LSTM.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/ai-research/ai-ml/llm-basic-2/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="ai-research ai-ml">
+            
+                <div class="card-content">
+                    <h3 class="card-title">LLM Engineering 2. LLM에 지식 주입하기</h3>
+                    
+                    <p class="card-body">
+                        
+                            이전 포스트에서 LLM은 “똑똑하지만 기억력이 없는 연산 장치”라고 정의했다.
+  [🔗 LLM 구동 방법]
+LLM을 활용하기 위해서는 지식을 넣어줘야하는데 지식을 넣는 방법은 크게 4가지가 있다.
+
+
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#스터디로그</span>
+                            
+                                <span class="tag-item">#NLP</span>
+                            
+                                <span class="tag-item">#LLM</span>
+                            
+                                <span class="tag-item">#Agent</span>
+                            
+                                <span class="tag-item">#LLM_Architecture</span>
+                            
+                                <span class="tag-item">#RAG</span>
+                            
+                                <span class="tag-item">#Langchain</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/blog/ai-research/ai-ml/llm-basic-1/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="ai-research ai-ml">
+            
+                <div class="card-content">
+                    <h3 class="card-title">LLM Engineering 1. LLM 앱의 5가지 기본 요소</h3>
+                    
+                    <p class="card-body">
+                        
+                            LLM(Large Language Model) 애플리케이션 개발은 단순히 API를 호출하여 텍스트를 받아오는 것이 전부가 아니다. 이 개념을 어떻게 바라보느냐에 따라 설계가 달라진다.
+
+
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#스터디로그</span>
+                            
+                                <span class="tag-item">#NLP</span>
+                            
+                                <span class="tag-item">#LLM</span>
+                            
+                                <span class="tag-item">#Agent</span>
+                            
+                                <span class="tag-item">#LLM_Architecture</span>
+                            
+                                <span class="tag-item">#RAG</span>
+                            
+                                <span class="tag-item">#Langchain</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/blog/ai-research/paper-review/LSTM/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="ai-research paper-review">
             
                 <div class="card-content">
                     <h3 class="card-title">Long Short-Term Memory</h3>
@@ -697,9 +934,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2024/12/03/REALM.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/ai-research/paper-review/REALM/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="ai-research paper-review">
             
                 <div class="card-content">
                     <h3 class="card-title">REALM: Retrieval-Augmented Language Model Pre-Training</h3>
@@ -729,9 +966,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2024/12/02/DPR.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/ai-research/paper-review/DPR/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="ai-research paper-review">
             
                 <div class="card-content">
                     <h3 class="card-title">Dense Passage Retrieval for Open-Domain Question Answering</h3>
@@ -760,12 +997,12 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2024/09/06/ibm.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/workspace/projects/ai-cctv/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace projects">
             
                 <div class="card-content">
-                    <h3 class="card-title">Ibm</h3>
+                    <h3 class="card-title">SWITCH(SW/AI 연합 창업 공모전): 지능형 CCTV 서비스</h3>
                     
                     <p class="card-body">
                         
@@ -775,34 +1012,28 @@ function toggleSidebar() {
                     </p>
 
                     
-                </div>
-
-                
-            </a>
-        
-            <a  href="/2024/06/19/ai-cctv.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
-            
-                <div class="card-content">
-                    <h3 class="card-title">Ai Cctv</h3>
-                    
-                    <p class="card-body">
-                        
+                        <div class="card-tags">
                             
-
-                        
-                    </p>
-
+                                <span class="tag-item">#프로젝트</span>
+                            
+                                <span class="tag-item">#CV</span>
+                            
+                                <span class="tag-item">#YOLOv8</span>
+                            
+                                <span class="tag-item">#AWS</span>
+                            
+                                <span class="tag-item">#MLOps</span>
+                            
+                        </div>
                     
                 </div>
 
                 
             </a>
         
-            <a  href="/2024/05/25/payroll-management.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/workspace/projects/payroll-management/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace projects">
             
                 <div class="card-content">
                     <h3 class="card-title">Oracle SQL 급여관리 프로그램</h3>
@@ -834,9 +1065,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2024/05/25/x-ray.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/workspace/projects/x-ray/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace projects">
             
                 <div class="card-content">
                     <h3 class="card-title">X-Ray 위험물 탐지 프로젝트</h3>
@@ -868,9 +1099,9 @@ function toggleSidebar() {
                 
             </a>
         
-            <a  href="/2024/01/01/verlan-dictionary.html" 
-            class="card card-underline card-row blog-post-card"
-            data-category="">
+            <a  href="/blog/workspace/projects/verlan-dictionary/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="workspace projects">
             
                 <div class="card-content">
                     <h3 class="card-title">24-1 졸업프로젝트: Verlans Dictionary</h3>
@@ -923,34 +1154,50 @@ categoryTitles['all'] = 'All Posts';
     
     // 상위 메뉴 처리
     
-        categoryTitles["study-log"] = "Study Log";
+        categoryTitles["ai-research"] = "AI Research";
     
 
     // 하위 메뉴(items) 처리
     
         
             
-                categoryTitles["ai-ml"] = "AI / ML / ML-Ops";
+                categoryTitles["ai-foundations"] = "Foundations";
             
         
             
-                categoryTitles["langchain"] = "Langchain";
+                categoryTitles["ai-ml"] = "AI / ML";
             
+        
+            
+                categoryTitles["llm"] = "LLM";
+            
+        
+            
+                categoryTitles["paper-review"] = "Paper Review";
+            
+        
+    
+
+
+    
+    // 상위 메뉴 처리
+    
+        categoryTitles["engineering"] = "Engineering";
+    
+
+    // 하위 메뉴(items) 처리
+    
         
             
                 categoryTitles["python"] = "Python";
             
         
             
-                categoryTitles["docker"] = "Docker";
+                categoryTitles["langchain"] = "LangChain";
             
         
             
-                categoryTitles["aws"] = "AWS";
-            
-        
-            
-                categoryTitles["error-handling"] = "Error handling";
+                categoryTitles["mlops"] = "MLOps(Docker/AWS)";
             
         
     
@@ -959,17 +1206,7 @@ categoryTitles['all'] = 'All Posts';
     
     // 상위 메뉴 처리
     
-        categoryTitles["paper-review"] = "Paper Review";
-    
-
-    // 하위 메뉴(items) 처리
-    
-
-
-    
-    // 상위 메뉴 처리
-    
-        categoryTitles["experiences"] = "Experiences";
+        categoryTitles["workspace"] = "Workspace";
     
 
     // 하위 메뉴(items) 처리
@@ -980,11 +1217,11 @@ categoryTitles['all'] = 'All Posts';
             
         
             
-                categoryTitles["educations"] = "Educations";
+                categoryTitles["dev-log"] = "Dev Log";
             
         
             
-                categoryTitles["engagements"] = "Engagements";
+                categoryTitles["retrospectives"] = "Retrospectives";
             
         
     
@@ -1000,11 +1237,11 @@ categoryTitles['all'] = 'All Posts';
     
         
             
-                categoryTitles["ai-insights"] = "AI Insights";
+                categoryTitles["insights"] = "Insights";
             
         
             
-                categoryTitles["personal-moments"] = "Personal Moments";
+                categoryTitles["daily"] = "Daily";
             
         
     
@@ -1067,6 +1304,7 @@ function filterPosts(category) {
     </main>
     
 </div>
+    </div>
 
 </body>
 </html>
