@@ -1,47 +1,55 @@
 <aside class="sidebar">
-  <button class="sidebar-toggle" onclick="toggleSidebar()">
-      Categories
-  </button>
+    
+    <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="카테고리 열기" aria-expanded="false">
+        Categories
+    </button>
 
-  <div class="sidebar-content" id="sidebarContent">
-      
-      {% for section in site.data.sidebar %}
-      <div class="sidebar-section">
-          
-          <h3 class="sidebar-heading">
-              {% if section.url %}
-                  <a href="{{ section.url }}" 
-                     class="{% if page.url == section.url %}active{% endif %}">
-                     {{ section.title }}
-                  </a>
-              {% else %}
-                  {{ section.title }}
-              {% endif %}
-          </h3>
-
-          {% if section.items %}
-          <ul class="sidebar-list">
-              {% for item in section.items %}
-              <li>
-                  <a href="{{ item.url }}" 
-                     class="sidebar-link {% if page.url contains item.url %}active{% endif %}"
-                     {% if item.new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
-                     {{ item.title }}
-                  </a>
-              </li>
-              {% endfor %}
-          </ul>
-          {% endif %}
-
-      </div>
-      {% endfor %}
-      
-  </div>
-</aside>
-
+    <div class="sidebar-content" id="sidebarContent">
+        
+        {% for section in site.data.sidebar %}
+        <div class="sidebar-section">
+            
+            <h3 class="sidebar-heading">
+                {% if section.url %}
+                    <a href="{{ section.url }}" 
+                       class="{% if page.url == section.url %}active{% endif %}">
+                       {{ section.title }}
+                    </a>
+                {% else %}
+                    {{ section.title }}
+                {% endif %}
+            </h3>
+  
+            {% if section.items %}
+            <ul class="sidebar-list">
+                {% for item in section.items %}
+                <li>
+                    <a href="{{ item.url }}" 
+                       class="sidebar-link {% if page.url contains item.url %}active{% endif %}"
+                       {% if item.new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                       {{ item.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+  
+        </div>
+        {% endfor %}
+        
+    </div> </aside>
+  
 <script>
-function toggleSidebar() {
-  document.getElementById('sidebarContent').classList.toggle('open');
-  document.querySelector('.sidebar-toggle').classList.toggle('open');
-}
+    function toggleSidebar() {
+        const content = document.getElementById('sidebarContent');
+        const toggleBtn = document.getElementById('sidebarToggle');
+        
+        // 1. 클래스 토글 (보이기/숨기기)
+        content.classList.toggle('open');
+        toggleBtn.classList.toggle('open');
+
+        // 2. 접근성 업데이트 (스크린 리더용)
+        const isOpened = content.classList.contains('open');
+        toggleBtn.setAttribute('aria-expanded', isOpened);
+    }
 </script>

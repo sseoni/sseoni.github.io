@@ -23,6 +23,8 @@
       url: /blog/?category=langchain
     - title: MLOps(Docker/AWS)
       url: /blog/?category=mlops
+    - title: Dev Tools
+      url: /blog/?category=dev-tools
 
 - title: Workspace
   url: /blog/?category=workspace

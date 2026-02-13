@@ -57,6 +57,13 @@ defaults:
       categories: ["engineering", "mlops"]
       permalink: /blog/:categories/:title/
 
+  - scope:
+      path: "_posts/engineering/dev-tools"
+      type: "posts"
+    values:
+      categories: ["engineering", "dev-tools"]
+      permalink: /blog/:categories/:title/
+
 
 
 

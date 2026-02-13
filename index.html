@@ -9,8 +9,8 @@ title: Home
     }
 </style>
 
-<div class="hero-content">
-    <header class="container">
+<main id="home-main" class="container content">
+    <section class="hero-section">
         <img class="hero-img" src="/assets/images/snowman.png" alt="Hero Image">
         
         <h1 class="introduction">
@@ -23,33 +23,30 @@ title: Home
             <a href="/blog/" class="btn btn-big btn-fill">Blog</a>    
             <a href="/portfolio/" class="btn btn-big btn-fill">Portfolio</a>    
         </div>
-    </header>
-</div>
+    </section>
 
-<main class="container main-wide">
+    <section class="main-wide">
+        {% include card-section.html
+            section-type="row"
+            title="Highlighted Posts"
+            align-title="title-center"
+            viewall-url="/blog/"
+            items=site.data.highlighted.posts
+            grid-type="grid-4"
+            card-type="stroke"
+        %}
 
-    {% include card-section.html
-        section-type="row"
-        title="Highlighted Posts"
-        align-title="title-center"
-        viewall-url="/blog/"
-        items=site.data.highlighted.posts
-        grid-type="grid-4"
-        card-type="stroke"
-    %}
-
-    {% include card-section.html
-        section-type="row"
-        title="Recent Projects"
-        align-title="title-center"
-        viewall-url="/blog/projects/"
-        items=site.data.highlighted.projects
-        card-type="stroke"
-    %}
-
+        {% include card-section.html
+            section-type="row"
+            title="Recent Projects"
+            align-title="title-center"
+            viewall-url="/blog/projects/"
+            items=site.data.highlighted.projects
+            card-type="stroke"
+        %}
+    </section>
 
     <footer class="footer">
         {% include footer.html %}
     </footer>
-
 </main>
