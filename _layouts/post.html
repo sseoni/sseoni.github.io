@@ -2,10 +2,8 @@
 layout: default
 ---
 
-<main class="container post-container">
-    
+<main id="blog-post">
     <article>
-    
         <header class="post-header">
             <div class="post-meta">
                 <span class="post-date">{{ page.date | date: "%Y.%m.%d" }}</span>
@@ -29,18 +27,6 @@ layout: default
         <div class="post-content">
             {{ content }}
         </div>
-
-        <footer class="post-footer">
-            
-            <div class="post-navigation">
-                <a href="/blog/" class="btn btn-big btn-fill">← Back to List</a>
-            </div>
-
-            <hr class="post-divider-line">
-
-            {% include related-posts.html %}
-
-        </footer>
 
     </article>
 
