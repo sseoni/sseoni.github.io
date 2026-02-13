@@ -1,0 +1,28 @@
+content: "정보처리기사 2단원: 소프트웨어 개발"
+children:
+  - content: 통합구현
+    children:
+      - content: 단위 모듈
+        children:
+          - content: 모듈화 원리
+            children:
+              - content: 분할과 지배
+                children:
+              - content: 정보 은폐
+                children:
+              - content: 자료 추상화
+                children:
+              - content: 모듈의 독립성
+                children:
+      - content: IDE
+        children:
+      - content: 빌드 자동화 도구
+        children:
+          - content: Gradle
+            children:
+          - content: 정보 은폐
+            children:
+          - content: 분할과 지배
+            children:
+          - content: 정보 은폐
+            children:

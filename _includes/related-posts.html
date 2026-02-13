@@ -1,0 +1,53 @@
+<div class="related-posts">
+    <h3>이런 글은 어때요? 👩🏻‍💻</h3>
+    
+    <div class="related-posts-grid">
+        {% assign related_posts_list = "" %}
+        
+        {% for post in site.posts %}
+            {% if post.url != page.url %}
+                
+                {% assign match_count = 0 %}
+                {% for tag in post.tags %}
+                    {% if page.tags contains tag %}
+                        {% assign match_count = match_count | plus: 1 %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if match_count > 0 %}
+                    {% assign score = match_count | plus: 100 %}
+                    {% assign entry = score | append: "::" | append: forloop.index0 | append: "|" %}
+                    {% assign related_posts_list = related_posts_list | append: entry %}
+                {% endif %}
+
+            {% endif %}
+        {% endfor %}
+
+        {% assign related_posts_array = related_posts_list | split: "|" | sort | reverse %}
+        
+        {% assign display_count = 0 %}
+
+        {% for entry in related_posts_array limit:3 %}
+            {% assign entry_parts = entry | split: "::" %}
+            {% assign post_index = entry_parts[1] | plus: 0 %} {% assign post = site.posts[post_index] %}
+
+            <a href="{{ post.url }}" class="related-card">
+                <div class="related-card-content">
+                    <span class="related-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+                    <h4 class="related-title">{{ post.title }}</h4>
+                    <div class="related-tags">
+                        {% for tag in post.tags limit:2 %}
+                            <span>#{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </a>
+            
+            {% assign display_count = display_count | plus: 1 %}
+        {% endfor %}
+
+        {% if display_count == 0 %}
+            <p class="no-related" style="color:#999; font-size:0.9rem;">아직 연관된 글이 없네요!</p>
+        {% endif %}
+    </div>
+</div>

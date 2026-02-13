@@ -1,0 +1,161 @@
+content: 소프트웨어 공학 (Software Engineering)
+children:
+  - content: 소프트웨어 (Software)
+    children:
+      - content: 구성
+        payload:
+          desc: |
+            프로그램: 실행 가능한 코드
+            자료구조: 데이터의 논리적 조직화
+            문서: 매뉴얼, 명세서
+      - content: 특징
+        payload:
+          desc: "상품성, 복잡성, 변경 가능성, 복제성"
+      - content: 시스템 구성요소
+        payload:
+          desc: "입력(Input) → 처리(Process) → 출력(Output), 제어(Control), 피드백(Feedback)"
+      - content: 위기 (Crisis)
+        payload:
+          desc: "비용 증가, 기간 지연, 신뢰성 부족, 유지보수비 폭증"
+        children:
+          - content: 해결책
+            children:
+              - content: 재공학 (Re-engineering)
+                payload:
+                  desc: "기존 시스템을 개선하여 수명 연장 및 유지보수 생산성 향상"
+                children:
+                  - content: 활동 절차
+                    payload:
+                      desc: "1.분석 → 2.재구성 → 3.역공학 → 4.이식"
+                  - content: 재사용 기술
+                    payload:
+                      desc: |
+                        생성 중심: 추상화 명세를 구체화하여 프로그램 제작
+                        합성 중심: 모듈을 조립하여 완성 (블록 방식)
+              - content: 리팩토링 (Refactoring)
+                payload:
+                  desc: "기능 변경 없이 내부 구조만 개선하여 가독성/유지보수성 향상"
+
+  - content: 개발 전략 (SDLC)
+    children:
+      - content: 전통적 모델
+        children:
+          - content: 폭포수 모형 (Waterfall)
+            payload:
+              desc: "보헴 제시, 선형 순차적 모델, 각 단계 매듭 후 다음 진행"
+          - content: 나선형 모형 (Spiral)
+            payload:
+              desc: "계획 → 위험 분석 → 개발 → 고객 평가 과정의 반복"
+          - content: V-모델
+            payload:
+              desc: "검증(Validation) & 확인(Verification) 강조"
+          - content: HIPO
+            payload:
+              desc: "가시적 도표, 총체적/세부적 다이어그램으로 구성된 하향식 설계 도구"
+      - content: 현대적 모델 (Agile)
+        children:
+          - content: 핵심 가치
+            payload:
+              desc: "개인과 상호작용, 실행되는 SW, 고객 협업, 변화에 대응"
+          - content: XP (eXtreme Programming)
+            payload:
+              desc: "5대 가치(소통, 단순성, 용기, 존중, 피드백) 및 12대 실천사항"
+            children:
+              - content: 주요 용어
+                payload:
+                  desc: "Spike: 어려운 요구사항 해결을 위한 간단한 프로그램"
+          - content: 스크럼 (Scrum)
+            payload:
+              desc: "스프린트, 제품 백로그, 팀워크 중심"
+
+  - content: 전술 및 설계 (Analysis & Design)
+    children:
+      - content: 요구사항 공학
+        payload:
+          desc: "도출 → 분석 → 명세 → 확인 프로세스"
+        children:
+          - content: 검증 방법
+            payload:
+              desc: "동료검토, 워크스루, 인스펙션"
+      - content: UML (표준 모델링)
+        children:
+          - content: 특성
+            payload:
+              desc: |
+                비주얼화
+                문서화 - 전체적 문서
+                명세화 - 구체적 스펙 등
+                구축 - 객체지향 언어와 호환되지는 않지만 모델이 객체지향 언어로 매핑될 수 있다.
+          - content: 소프트웨어에 대한 관점
+            children:
+              - content: 기능적 관점
+                payload:
+                  desc: 실제 어떤 기능을 수행하는지 → Use Case Diagram으로 표현
+              - content: 정적 관점
+                payload:
+                  desc: SW 내부의 구성요소 간의 구조적 관계 → Class Diagram으로 표현
+              - content: 동적 관점
+                payload:
+                  desc: |
+                    시스템의 내부 동작
+                      → Sequence Diagram
+                        State Diagram = 순차 다이어그램
+                        Activity Diagram
+          - content: 기본구성
+            children:
+              - content: 사물
+              - content: 관계
+              - content: 다이어그램
+                payload:
+                  desc: |
+                    객체의 관계를 도식화하여
+                    다양한 관점에서 의사소통할 수 있도록 view 제공
+              - content: +@ 스테레오 타입
+                payload:
+                  desc: |
+                    UML에서 제공하는 기본요소 이외에 추가적인 확장요소를 표현할 때 사용
+                    길러멧(guillemet, « »)안에 확장요소를 적용
+          - content: 정적 모델  → 구조 다이어그램
+            payload:
+              desc: "클래스, 객체, 컴포넌트, 배치, 패키지 등"
+          - content: 동적 모델  → 행위 다이어그램
+            payload:
+              desc: "유스케이스, 순차(Sequence), 상태, 활동 등"
+
+      - content: 객체지향 원칙 (SOLID)
+        payload:
+          desc: "SRP, OCP, LSP, ISP, DIP 원칙"
+
+  - content: 표준화 및 품질
+    children:
+      - content: 아키텍처 패턴
+        payload:
+          desc: "MVC(Model-View-Controller), 파이프-필터"
+      - content: GoF 디자인 패턴
+        children:
+          - content: 생성 (5종)
+            payload:
+              desc: "추상 팩토리, 빌더, 팩토리 메소드, 프로토타입, 싱글톤"
+          - content: 구조 (7종)
+            payload:
+              desc: "어댑터, 브리지, 컴포지트, 데코레이터, 퍼싸드, 플라이웨이트, 프록시"
+          - content: 행위 (11종)
+            payload:
+              desc: "책임 연쇄, 커맨드, 옵서버, 전략, 상태 등"
+      - content: 모듈화 지표
+        payload:
+          desc: |
+            결합도(낮을수록 좋음): 자료 > 스탬프 > 제어 > 외부 > 공통 > 내용
+            응집도(높을수록 좋음): 기능 > 순차 > 교환 > 절차 > 시간 > 논리 > 우연
+
+  - content: 환경 및 도구
+    children:
+      - content: CASE (자동화)
+        payload:
+          desc: "구조적 기법, 프로토타이핑 등 SW 개발 자동화 기술"
+      - content: 미들웨어
+        payload:
+          desc: "이기종 간 연결 및 서비스 제공 (WAS, RPC, MOM 등)"
+      - content: 형상 관리 (SCM)
+        payload:
+          desc: "변경 사항 추적 및 관리 (Git, CVS, SVN)"
