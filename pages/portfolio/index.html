@@ -4,60 +4,62 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-<div class="hero-content">
-    <header class="container">
-        <img class="hero-img" src="/assets/images/seohyun.png" alt="Hero Image">
-        <div>
-            <h1 class="introduction">Seohyun SHIN</h1>
-            <a href="mailto:fdsa801@gmail.com">fdsa801@gmail.com</a>
-        </div>
-        <div class="btn-group-gap10">
-            <a class="btn btn-small btn-fill state-null">NLP</a>    
-            <a class="btn btn-small btn-fill state-null">MCP-Agent</a> 
-            <a class="btn btn-small btn-fill state-null">Robust</a>    
-            <a class="btn btn-small btn-fill state-null">Explaniable</a> 
-            <a class="btn btn-small btn-fill state-null">AGI</a>    
-        </div>
-    </header>
-</div>
+<main>
+    <section class="hero-section">
+        <header class="container">
+            <img class="hero-img" src="/assets/images/seohyun.png" alt="Hero Image">
+            <div>
+                <h1 class="introduction">Seohyun SHIN</h1>
+                <a href="mailto:fdsa801@gmail.com">fdsa801@gmail.com</a>
+            </div>
+            <div class="btn-group-gap10">
+                <a class="btn btn-small btn-fill state-null">NLP</a>    
+                <a class="btn btn-small btn-fill state-null">MCP-Agent</a> 
+                <a class="btn btn-small btn-fill state-null">Robust</a>    
+                <a class="btn btn-small btn-fill state-null">Explaniable</a> 
+                <a class="btn btn-small btn-fill state-null">AGI</a>    
+            </div>
+        </header>
+    </section>
 
-<main class="container portfolio-wide">
-    <section class="section">
-        <div class="profile-header">
-            <h2 class="heading">AI system Designer / ML-Ops Engineer</h2>
-            <p class="body-base">신뢰할 수 있는 AGI를 목표로 Agentic system을 기획하고 개발합니다.</p>
-        </div>
+    <section class="portfolio-wide">
+        <section class="section">
+            <div class="profile-header">
+                <h2 class="heading">AI system Designer / ML-Ops Engineer</h2>
+                <p class="body-base">신뢰할 수 있는 AGI를 목표로 Agentic system을 기획하고 개발합니다.</p>
+            </div>
 
-        {% include card-section.html
-            section-type="column"
-            title="Stacks and Tools"
-            items=site.data.portfolio.skills
-        %}
-        
-        {% include card-section.html
-            section-type="column"
-            title="Projects" 
-            items=site.data.highlighted.projects
-            viewall-url="/blog/projects/"
-        %}
+            {% include card-section.html
+                section-type="column"
+                title="Stacks & Tools"
+                items=site.data.portfolio.skills
+            %}
+            
+            {% include card-section.html
+                section-type="column"
+                title="Projects" 
+                items=site.data.highlighted.projects
+                viewall-url="/blog/projects/"
+            %}
 
-        {% include card-section.html
-            section-type="column"
-            title="Experiences"
-            items=site.data.highlighted.experiences
-            viewall-url="/blog/experiences/"
-        %}
+            {% include card-section.html
+                section-type="column"
+                title="Experiences"
+                items=site.data.highlighted.experiences
+                viewall-url="/blog/experiences/"
+            %}
 
-        {% include card-section.html
-            section-type="column"
-            title="Awards"
-            items=site.data.portfolio.awards
-        %}
+            {% include card-section.html
+                section-type="column"
+                title="Awards"
+                items=site.data.portfolio.awards
+            %}
 
-        {% include card-section.html
-            section-type="column"
-            title="Educations"
-            items=site.data.portfolio.educations
-        %}
+            {% include card-section.html
+                section-type="column"
+                title="Educations"
+                items=site.data.portfolio.educations
+            %}
+        </section>
     </section>
 </main>

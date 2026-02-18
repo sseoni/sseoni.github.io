@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
+
 <body>
     
     <header class="header">
@@ -70,8 +74,8 @@
     });
 </script>
 
-    <div id="container">
-        <div class="container blog-layout">
+    <div id="layout-wrapper">
+        <div class="blog-layout">
     <aside class="sidebar">
     
     <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="카테고리 열기" aria-expanded="false">
@@ -186,6 +190,14 @@
                        class="sidebar-link "
                        >
                        MLOps(Docker/AWS)
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/blog/?category=dev-tools" 
+                       class="sidebar-link "
+                       >
+                       Dev Tools
                     </a>
                 </li>
                 
@@ -314,8 +326,8 @@
     }
 </script>
 
-    <main class="container content blog-content">
-        <main class="container blog-wide">
+    <div>
+        <main class="blog-wide">
     
     <!--
 필수
@@ -360,6 +372,142 @@
         </div>
         
     <div class="grid-1">
+        
+            <a  href="/2026/02/18/html-4.html" 
+            class="card card-underline card-row blog-post-card "
+            data-category="">
+            
+                <div class="card-content">
+                    <h3 class="card-title">[HTML/CSS] div는 줄을 바꾸고, span은 옆에 붙는다? (Block vs Inline)</h3>
+                    
+                    <p class="card-body">
+                        
+                            HTML 태그는 태어날 때부터 “자리를 차지하는 성격”이 정해져 있다.
+어떤 태그는 화면 전체를 혼자 쓰려 하고(Block), 어떤 태그는 콘텐츠 크기만큼만 살짝 자리를 잡는다(Inline).
+
+
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#스터디로그</span>
+                            
+                                <span class="tag-item">#HTML5</span>
+                            
+                                <span class="tag-item">#div는</span>
+                            
+                                <span class="tag-item">#span은</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/2026/02/18/html-3.html" 
+            class="card card-underline card-row blog-post-card "
+            data-category="">
+            
+                <div class="card-content">
+                    <h3 class="card-title">[HTML/CSS] ID와 Class</h3>
+                    
+                    <p class="card-body">
+                        
+                            HTML/CSS를 처음 접할 때 가장 헷갈리는 것이 바로 ID(#)와 Class(.)의 차이다.
+color: red;를 주면 둘 다 빨간색으로 변하고, 겉보기엔 똑같이 작동하는 것처럼 보인다.
+
+
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#스터디로그</span>
+                            
+                                <span class="tag-item">#HTML5</span>
+                            
+                                <span class="tag-item">#ID</span>
+                            
+                                <span class="tag-item">#Class</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/blog/engineering/dev-tools/commit-message/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering dev-tools">
+            
+                <div class="card-content">
+                    <h3 class="card-title">[Git] 좋은 Commit Message 작성하기</h3>
+                    
+                    <p class="card-body">
+                        
+                            개발을 하다 보면 과거의 내가 짠 코드를 보며 “도대체 왜 이렇게 짰지?” 라고 생각할 때가 있다.
+
+
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#git</span>
+                            
+                                <span class="tag-item">#github</span>
+                            
+                                <span class="tag-item">#commit-message</span>
+                            
+                                <span class="tag-item">#convention</span>
+                            
+                                <span class="tag-item">#dev-log</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
+        
+            <a  href="/blog/engineering/dev-tools/git-basic/" 
+            class="card card-underline card-row blog-post-card "
+            data-category="engineering dev-tools">
+            
+                <div class="card-content">
+                    <h3 class="card-title">[Git 기초] add, commit, push, pull 완벽 이해하기</h3>
+                    
+                    <p class="card-body">
+                        
+                            Git을 처음 접할 때 가장 헷갈리는 부분은 ‘파일 저장(Ctrl+S)’과 ‘Git 저장(Commit)’의 차이이다.
+
+
+                        
+                    </p>
+
+                    
+                        <div class="card-tags">
+                            
+                                <span class="tag-item">#git</span>
+                            
+                                <span class="tag-item">#github</span>
+                            
+                                <span class="tag-item">#version-control</span>
+                            
+                                <span class="tag-item">#tutorial</span>
+                            
+                        </div>
+                    
+                </div>
+
+                
+            </a>
         
             <a  href="/graphs/info-proc/" 
             class="card card-underline card-row blog-post-card "
@@ -510,7 +658,7 @@
                     
                     <p class="card-body">
                         
-                            12월 20일, 누티드 익선에서 열린 Instruct Korea 12월 Meetup에 다녀왔습니다. 제가 속한 가짜연구소 7기 ‘깃헙에 nlp 잔디심기’ 팀은 이번 행사에서 [Cherry in the Haystack] 프로젝트로 포스터 발표를 진행했습니다.
+                            12월 20일, 누티드 익선에서 열린 Instruct Korea 12월 Meetup에 다녀왔다. 내가 속한 가짜연구소 7기 ‘깃헙에 nlp 잔디심기’ 팀은 이번 행사에서 [Cherry in the Haystack] 프로젝트로 포스터 발표를 진행했다.
 
 
                         
@@ -561,9 +709,9 @@
                 
             </a>
         
-            <a  href="/blog/engineering/mlops/docker-run/" 
+            <a  href="/blog/engineering/dev-tools/docker-run/" 
             class="card card-underline card-row blog-post-card "
-            data-category="engineering mlops">
+            data-category="engineering dev-tools">
             
                 <div class="card-content">
                     <h3 class="card-title">Docker 실행하기</h3>
@@ -592,9 +740,9 @@
                 
             </a>
         
-            <a  href="/blog/engineering/mlops/docker-error1/" 
+            <a  href="/blog/engineering/dev-tools/docker-error1/" 
             class="card card-underline card-row blog-post-card "
-            data-category="engineering mlops">
+            data-category="engineering dev-tools">
             
                 <div class="card-content">
                     <h3 class="card-title">dockerfile name error, -f flag</h3>
@@ -1200,6 +1348,10 @@ categoryTitles['all'] = 'All Posts';
                 categoryTitles["mlops"] = "MLOps(Docker/AWS)";
             
         
+            
+                categoryTitles["dev-tools"] = "Dev Tools";
+            
+        
     
 
 
@@ -1301,7 +1453,7 @@ function filterPosts(category) {
     });
 }
 </script>
-    </main>
+    </div>
     
 </div>
     </div>
