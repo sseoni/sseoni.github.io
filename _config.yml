@@ -64,6 +64,13 @@ defaults:
       categories: ["engineering", "dev-tools"]
       permalink: /blog/:categories/:title/
 
+  - scope:
+      path: "_posts/engineering/frontend"
+      type: "posts"
+    values:
+      categories: ["engineering", "frontend"]
+      permalink: /blog/:categories/:title/
+
 
 
 

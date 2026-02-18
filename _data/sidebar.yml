@@ -25,6 +25,8 @@
       url: /blog/?category=mlops
     - title: Dev Tools
       url: /blog/?category=dev-tools
+    - title: FrontEnd
+      url: /blog/?category=frontend
 
 - title: Workspace
   url: /blog/?category=workspace
