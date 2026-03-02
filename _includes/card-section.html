@@ -32,11 +32,18 @@
 
 {% capture cards_content %}
     <div class="{{ grid_class }}">
-        {% for item in include.items %}
-        {% assign item = raw_item %}
+        {% for raw_item in include.items %}
+            
+            {% assign item = raw_item %}
+            {% assign matched_post = nil %}
             
             {% if item.title == nil and item.url %}
-                {% assign matched_post = site.posts | where: "url", item.url | first %}
+                {% for post in site.posts %}
+                    {% if post.url == item.url or post.url contains item.url %}
+                        {% assign matched_post = post %}
+                        {% break %} {% endif %}
+                {% endfor %}
+
                 {% if matched_post %}
                     {% assign item = matched_post %}
                 {% endif %}
