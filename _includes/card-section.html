@@ -33,6 +33,15 @@
 {% capture cards_content %}
     <div class="{{ grid_class }}">
         {% for item in include.items %}
+        {% assign item = raw_item %}
+            
+            {% if item.title == nil and item.url %}
+                {% assign matched_post = site.posts | where: "url", item.url | first %}
+                {% if matched_post %}
+                    {% assign item = matched_post %}
+                {% endif %}
+            {% endif %}
+            
             <a {% if item.url %} href="{{ item.url }}" {% endif %}
             class="card card-{{ card_style }} card-row {% if page.url contains 'blog' %}blog-post-card{% endif %} {% if item.url == blank %}state-null{% endif %}"
             data-category="{{ item.categories | join: ' ' | downcase }}">
