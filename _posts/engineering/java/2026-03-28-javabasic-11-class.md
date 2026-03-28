@@ -16,7 +16,7 @@ summary:
 
 와플 틀(클래스)이 있으면 클래식 와플, 크로플 등(객체)을 무한히 찍어낼 수 있다.
 
-```jsx
+```java
 public static void main(String[] args) {
 	//클래스명 객체명 = new 클래스명();
 	Waffle classic = new Waffle();
@@ -41,7 +41,7 @@ public static void main(String[] args) {
     객체(인스턴스)를 `new`로 생성할 때마다 각 객체 안에 개별적으로 만들어진다. (예: 학생마다 이름이 다름)
     
 
-```jsx
+```java
 public class Student {
     // 1. 클래스 변수 (모든 학생이 공유하는 총 학생 수)
     static int totalStudents = 0; 
@@ -92,7 +92,7 @@ public class Main {
     반드시 객체를 생성한 뒤에 호출할 수 있으며, 인스턴스 변수를 자유롭게 다룰 수 있다.
     
 
-```jsx
+```java
 public class Student {
     static int totalStudents = 0;
     

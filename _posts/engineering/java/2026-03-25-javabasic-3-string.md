@@ -12,7 +12,7 @@ summary:
 
 메모리를 효율적으로 사용할 수 있는 리터럴 방식이 더 권장된다.
 
-```jsx
+```java
 // 1. 리터럴 방식 (권장 ⭐)
 // 메모리의 'String Constant Pool'에 저장되어 같은 문자열은 재사용된다.
 String str1 = "Hello"; 
@@ -37,7 +37,7 @@ String str2 = new String("Hello");
 | `indexOf()` | 특정 문자열이 처음 시작되는 위치(인덱스) 반환 | `s.indexOf("Java");` | `7` |
 | `lastIndexOf()` | 특정 문자열이 마지막으로 등장하는 위치 반환 | `s.lastIndexOf("a");` | `10` |
 
-```jsx
+```java
 String s = "I like Java";
 
 // [문자열 기능 사용 예제]
@@ -55,7 +55,7 @@ System.out.println(s.indexOf("Java")); // J가 7번째 인덱스에 있으므로
 - `==` 연산자: 두 문자열이 메모리상에서 **같은 주소(위치)**를 가리키는지 비교한다.
 - `.equals()` 메서드: 메모리 주소와 상관없이, 안에 들어있는 **실제 텍스트 내용**이 완벽히 같은지 비교한다.
 
-```jsx
+```java
 String a = "Java";
 String b = "Java"; // a와 같은 리터럴 풀을 참조
 String c = new String("Java"); // 아예 새로운 메모리 주소에 할당됨
@@ -87,7 +87,7 @@ System.out.println(a.equalsIgnoreCase(d)); // true
 | `\'` | 작은따옴표 출력 | `"\'자바\' 공부"` | '자바' 공부 |
 | `\\` | 백슬래시 자체를 출력 | `"C:\\Workspace"` | C:\Workspace |
 
-```jsx
+```java
 // [특수 문자 사용 예제]
 System.out.println("줄바꿈이\n됩니다.");
 System.out.println("경로는 C:\\Users\\Desktop 입니다.");

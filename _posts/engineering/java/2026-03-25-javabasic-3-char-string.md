@@ -16,7 +16,7 @@ summary:
 
 따라서 `char` 끼리 `+` 기호를 사용하면, 자바는 이를 글자를 이어 붙이라는 뜻이 아니라 **"아스키코드 숫자끼리 산술 덧셈을 해라!"**라고 받아들인다.
 
-```jsx
+```java
 // [char 타입의 덧셈 연산 (주의!)]
 public static void main(String[] args) {
     char a = '1'; // 내부적으로 아스키코드 49
@@ -36,7 +36,7 @@ public static void main(String[] args) {
 
 `String` 객체 사이에서의 `+` 연산자는 산술 덧셈이 아니라 **'문자열 결합(Concatenation)'**으로 완전히 다르게 동작하기 때문이다.
 
-```jsx
+```java
 // [String 타입의 결합 연산 (권장!)]
 public static String joinStrings(String str1, String str2) {
     // 문자열에서 + 기호는 텍스트를 기차처럼 나란히 이어붙인다.
