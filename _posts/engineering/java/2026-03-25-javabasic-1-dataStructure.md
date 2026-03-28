@@ -21,7 +21,7 @@ summary:
 | **문자형** | `char` | 2 byte | 단 하나의 문자 저장 (홑따옴표 사용) | `char grade = 'A';` |
 | **논리형** | `boolean` | 1 byte | 참(`true`) 또는 거짓(`false`) | `boolean isFun = true;` |
 
-[2026-03-25-javabasic-1-**suffix**](2026-03-25-javabasic-1-suffix%20330efe6e292380c39eb8f493db7799a8.md) 
+[[참조] long과 float에 접미사(L, f)를 안 붙이면 어떻게 될까?](https://sseoni.github.io/blog/engineering/java/javabasic-1-suffix/) 
 
 ## 1-2. 참조 자료형 (Reference Data Types)
 
