@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Java 기초] 12. 클래스와 메소드: 객체지향의 시작"
+title: "[Java 기초] 11. 클래스와 메소드: 객체지향의 시작"
 date: 2026-03-28
 tags: [스터디로그, Java, 정보처리기사]
 summary:

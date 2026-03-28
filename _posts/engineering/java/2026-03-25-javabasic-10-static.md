@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Java 기초] [참조] 12. 자바에는 전역 변수(Global Variable)가 없을까? (feat. static)"
+title: "[Java 기초] [참조] 자바에는 전역 변수(Global Variable)가 없을까? (feat. static)"
 date: 2026-03-25
 tags: [스터디로그, Java, 정보처리기사]
 summary:
