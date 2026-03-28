@@ -71,6 +71,20 @@ defaults:
       categories: ["engineering", "frontend"]
       permalink: /blog/:categories/:title/
 
+  - scope:
+      path: "_posts/engineering/cs"
+      type: "posts"
+    values:
+      categories: ["engineering", "cs"]
+      permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/engineering/java"
+      type: "posts"
+    values:
+      categories: ["engineering", "java"]
+      permalink: /blog/:categories/:title/
+      
 
 
 

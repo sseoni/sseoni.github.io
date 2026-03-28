@@ -27,6 +27,10 @@
       url: /blog/?category=dev-tools
     - title: FrontEnd
       url: /blog/?category=frontend
+    - title: Computer Science
+      url: /blog/?category=cs
+    - title: Java
+      url: /blog/?category=java
 
 - title: Workspace
   url: /blog/?category=workspace
