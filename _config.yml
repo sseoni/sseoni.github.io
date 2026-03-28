@@ -125,3 +125,10 @@ defaults:
     values:
       categories: ["beyond-code", "personal"]
       permalink: /blog/:categories/:title/
+
+
+
+
+markdown: kramdown
+kramdown:
+  hard_wrap: true

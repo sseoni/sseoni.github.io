@@ -85,4 +85,4 @@ public static void main(String[] args) {
 }
 ```
 
-💡[주의] 두 문자를 더하는 경우
+{% include link-card.html url="/blog/engineering/java/javabasic-3-char-string" %}

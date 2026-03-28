@@ -123,4 +123,4 @@ public static void main(String[] args){
 }
 ```
 
-[🔗 this 설명](https://sseoni.github.io/blog/engineering/java/javabasic-12-object/)
+{% include link-card.html url="/blog/engineering/java/javabasic-11-this" %}

@@ -22,7 +22,7 @@ summary:
 - **`int` 범위(약 ±21억) 이내**: 정상 작동 (`int` → `long`으로 자동 형변환됨)
 - **`int` 범위 초과**: **컴파일 에러 💥** (`int` 메모리 공간을 넘어서므로 아예 읽어들이지 못함)
 
-```jsx
+```java
 long num1 = 100;         // 정상: int형 100이 long으로 자동 형변환되어 들어감
 long num2 = 3000000000;  // 에러: 21억을 넘어 int 범위를 초과함 (Integer number too large)
 long num3 = 3000000000L; // 정상: 'L'을 붙여 처음부터 long 타입임을 명시
@@ -36,7 +36,7 @@ long num3 = 3000000000L; // 정상: 'L'을 붙여 처음부터 long 타입임을
 
 `double`(8 byte)이라는 큰 데이터를 더 작은 공간인 `float`(4 byte) 변수에 넣으려는 상황이 되므로, 값의 크기와 상관없이 **항상 데이터 손실 에러**가 발생한다.
 
-```jsx
+```java
 float pi1 = 3.14;  // 에러: double 값을 float 변수에 억지로 넣을 수 없음 (Type mismatch)
 float pi2 = 3.14f; // 정상: 'f'를 붙여 float 타입임을 명시
 ```

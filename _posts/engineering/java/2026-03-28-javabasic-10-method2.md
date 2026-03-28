@@ -39,7 +39,7 @@ public static int add(int a, int b, int c) {
 
 이름, 전달값, 반환값 타입이 **모두 부모와 완벽히 똑같아야** 하며, 내부 로직(코드)만 변경할 수 있다.
 
-[🔗 메소드 오버라이딩 (Overriding) 상세설명](https://sseoni.github.io/blog/engineering/java/javabasic-2-overriding/)
+{% include link-card.html url="/blog/engineering/java/javabasic-2-overriding" %}
 
 ```java
 // [부모 클래스]
@@ -71,7 +71,7 @@ class Dog extends Animal {
 
 ❗️파이썬이나 c언어와는 달리 자바에는 전역변수(Global)는 존재하지 않는다.
 
-[🔗 Java의 전역변수 Static](https://sseoni.github.io/blog/engineering/java/javabasic-10-static/)
+{% include link-card.html url="/blog/engineering/java/javabasic-10-static" %}
 
 - **지역 변수 (Local Variable)**: 메소드나 제어문(if, for 등) 안에서 선언된 변수. 해당 블록을 벗어나면 죽는다.
 - **매개 변수 (Parameter)**: 메소드 선언부에 적힌 변수. 해당 메소드 안에서만 쓰이고 메소드가 끝나면 죽는다.
