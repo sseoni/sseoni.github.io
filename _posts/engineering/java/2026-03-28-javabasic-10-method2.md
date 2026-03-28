@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Java 기초] 10. 메소드 오버로딩(Overloading)과 스코프(Scope)"
-date: 2026-03-25
+date: 2026-03-28
 tags: [스터디로그, Java, 정보처리기사]
 summary:
 ---
