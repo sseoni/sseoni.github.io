@@ -1,0 +1,56 @@
+{% assign target_url = include.url %}
+{% assign matched_post = nil %}
+
+{% for post in site.posts %}
+{% if post.url == target_url or post.url contains target_url %}
+{% assign matched_post = post %}
+{% break %}
+{% endif %}
+{% endfor %}
+
+<style>
+  .post-bookmark {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 24px 0;
+    text-decoration: none !important;
+    background-color: #fafafa;
+    transition: all 0.2s ease-in-out;
+  }
+  .post-bookmark:hover {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+  }
+  .post-bookmark-label {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .post-bookmark-title {
+    font-size: 16px !important; /* 본문 헤딩보다 작게 강제 설정 */
+    font-weight: 700;
+    color: #111827 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.4;
+  }
+</style>
+
+{% if matched_post %}
+<div markdown="0">
+<a href="{{ matched_post.url }}" class="post-bookmark">
+<div class="post-bookmark-label">
+🔗 Reference
+</div>
+<h3 class="post-bookmark-title">{{ matched_post.title }}</h3>
+</a>
+</div>
+{% else %}
+<a href="{{ target_url }}" target="_blank" rel="noopener noreferrer">{{ target_url }}</a>
+{% endif %}
