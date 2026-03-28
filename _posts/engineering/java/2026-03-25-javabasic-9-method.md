@@ -35,7 +35,7 @@ public static void main(String[] args) {
 
 자판기에 동전을 넣듯, 메소드에 작업을 지시할 때 외부에서 값을 던져줄 수 있다. 이를 **전달값(파라미터)**이라고 한다. 괄호 `()` 안에 어떤 타입의 값을 받을지 변수를 선언해 주면 된다. 여러 개의 값을 쉼표(`,`)로 구분하여 받을 수도 있다.
 
-```jsx
+```java
 // [전달값이 없는 메소드]
 public static void sayHello() {
     System.out.println("안녕!");
@@ -56,7 +56,7 @@ public static void main(String[] args) {
 
 메소드가 작업을 끝낸 후, 그 결과를 호출한 곳으로 다시 돌려주는 것을 **반환(Return)**이라고 한다. 반환값이 있을 때는 메소드 선언부에 `void` 대신 **반환할 데이터의 타입(예: `int`, `String` 등)**을 적어주어야 한다.
 
-```jsx
+```java
 // [반환값이 있는 메소드] 항상 int 100을 돌려주는 메소드
 public static int getScore() {
     return 100; // return 키워드를 만나면 값을 반환하고 메소드는 즉시 종료됨
@@ -72,7 +72,7 @@ public static void main(String[] args) {
 
 실무에서 가장 많이 쓰이는 형태다. 재료(전달값)를 받아 가공한 뒤, 완성품(반환값)을 돌려준다.
 
-```jsx
+```java
 // [전달값과 반환값이 모두 있는 메소드] 두 숫자를 더해 결과를 반환
 public static int addNumbers(int num1, int num2) {
     int result = num1 + num2;
@@ -85,15 +85,4 @@ public static void main(String[] args) {
 }
 ```
 
-```jsx
-// 💡[주의] 두 문자를 더하는 경우
-public static char joinChars(char a, char b) {
-    char result = a + b;
-    return result; 
-}
-
-public static void main(String[] args) {
-    char result = joinChars(10, 20); // 10과 20을 던져주고, 결과(1020)를 받음
-    System.out.println("두 문자의 합: " + result);
-}
-```
+💡[주의] 두 문자를 더하는 경우
