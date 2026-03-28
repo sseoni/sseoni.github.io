@@ -122,3 +122,5 @@ public static void main(String[] args){
 	Student.printTotal();    // "현재 등록된 총 학생 수: 1" 출력
 }
 ```
+
+[🔗 this 설명](https://sseoni.github.io/blog/engineering/java/javabasic-12-object/)
