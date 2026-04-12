@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Java 기초] [참조] new Integer()에 취소선이 그어지는 이유 (Deprecated), 자바의 IntegerCache와 오토박싱(Auto-boxing) 사용하기"
+title: "[Java 기초] [참조] new Integer()에 취소선이 그어지는 이유 (자바의 메모리 최적화)"
 date: 2026-04-09 17:30
 tags: [스터디로그, java, Wrapper, Auto-boxing, Deprecated, IntegerCache]
 summary: 자바 9부터 Wrapper 클래스의 생성자(new Integer)가 비권장(Deprecated) 처리된 이유와, 메모리 효율을 위한 오토박싱 및 캐싱(Caching) 원리
@@ -21,11 +21,13 @@ summary: 자바 9부터 Wrapper 클래스의 생성자(new Integer)가 비권장
 자바 개발진은 이 메모리 낭비를 막기 위해 **캐싱(Caching)** 기법을 도입했다. 
 자바는 실행될 때, 개발자들이 가장 자주 쓰는 숫자인 **-128부터 127까지의 `Integer` 객체를 메모리에 미리 딱 1개씩만 만들어 둔다.** (이를 `IntegerCache`라고 부른다.)
 
-
 * **`new Integer(10)` (과거 방식)**: 캐시를 무시하고 무조건 새로운 객체를 찍어낸다. (메모리 낭비)
 * **`Integer.valueOf(10)` (개선된 방식)**: 메모리에 미리 만들어둔 숫자 10 객체의 '주소'만 빌려온다. 1만 번을 호출해도 메모리에는 딱 1개의 객체만 존재한다.
 
 그리고 현대 자바에서는 이마저도 직접 쓸 필요 없이 **오토박싱(Auto-boxing)**을 사용하면 된다. 컴파일러가 알아서 가장 효율적인 `valueOf()` 방식으로 코드를 변환해 주기 때문이다.
+
+👉 이전 포스트 참조
+{% include link-card.html url="/blog/engineering/java/javabasic-17-wrapper-autoBoxing" %}
 
 ## 3. 올바른 Wrapper 클래스 사용법 비교
 
