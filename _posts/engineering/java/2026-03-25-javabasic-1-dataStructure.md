@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Java 기초] 1. 자료형과 형변환"
-date: 2026-03-25
+date: 2026-03-25 00:00
 tags: [스터디로그, Java, 기본자료형, 참조자료형]
 summary:
 ---

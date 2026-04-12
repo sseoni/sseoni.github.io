@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Java 기초] [참조] long과 float에 접미사(L, f)를 안 붙이면 어떻게 될까?"
-date: 2026-03-25
+date: 2026-03-25 00:01
 tags: [스터디로그, Java, 정보처리기사]
 summary:
 ---

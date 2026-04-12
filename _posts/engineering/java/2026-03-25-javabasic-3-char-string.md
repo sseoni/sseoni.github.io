@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Java 기초] [참조] 문자를 더했는데 왜 숫자가 나올까? (char vs String 덧셈의 함정)"
-date: 2026-03-25
+date: 2026-03-25 00:00
 tags: [스터디로그, Java, 정보처리기사]
 summary:
 ---

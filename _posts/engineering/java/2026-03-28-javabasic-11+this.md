@@ -2,7 +2,7 @@
 
 layout: post
 title: "[Java 기초] [참조] this. 키워드: 인스턴스 변수 구분"
-date: 2026-03-28
+date: 2026-03-28 00:01
 tags: [스터디로그, java, this]
 summary:
 
