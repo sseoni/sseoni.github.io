@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Java 기초] [활용] 실전! ArrayList 핵심 메서드(API) 총정리"
+title: "[Java 활용] ArrayList 핵심 메서드(API) 총정리"
 date: 2026-04-12 19:30
 tags: [스터디로그, java, Collection, ArrayList, API]
 summary: 실무와 코딩 테스트에서 가장 빈번하게 사용되는 ArrayList의 데이터 추가, 조회, 수정, 삭제 관련 핵심 메서드들의 사용법을 완벽하게 정리한다.

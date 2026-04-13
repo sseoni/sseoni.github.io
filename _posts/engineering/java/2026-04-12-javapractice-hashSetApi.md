@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Java 기초] [활용] 실전! HashSet 핵심 메서드(API) 총정리"
+title: "[Java 활용] HashSet 핵심 메서드(API) 총정리"
 date: 2026-04-12 20:30
 tags: [스터디로그, java, Collection, Set, HashSet, API]
 summary: 데이터의 중복을 허용하지 않고 순서가 없는 집합형 자료구조 HashSet의 핵심 메서드 사용법을 완벽하게 정리한다.

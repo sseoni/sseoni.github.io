@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Java 기초] [활용] 실전! LinkedList 핵심 메서드(API) 총정리"
+title: "[Java 활용] LinkedList 핵심 메서드(API) 총정리"
 date: 2026-04-12 20:00
 tags: [스터디로그, java, Collection, LinkedList, API]
 summary: 삽입과 삭제에 특화된 이중 연결 리스트 구조인 LinkedList의 핵심 메서드 사용법을 알아본다. (Deque 인터페이스 특화 기능 포함)
