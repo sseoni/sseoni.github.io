@@ -89,24 +89,24 @@ defaults:
 
 
   - scope:
-      path: "_posts/workspace/projects"
+      path: "_posts/experiences/projects"
       type: "posts"
     values:
-      categories: ["workspace", "projects"]
+      categories: ["experiences", "projects"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/workspace/dev-log"
+      path: "_posts/experiences/dev-log"
       type: "posts"
     values:
-      categories: ["workspace", "dev-log"]
+      categories: ["experiences", "dev-log"]
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/workspace/retrospectives"
+      path: "_posts/experiences/retrospectives"
       type: "posts"
     values:
-      categories: ["workspace", "retrospectives"]
+      categories: ["experiences", "retrospectives"]
       permalink: /blog/:categories/:title/
 
 

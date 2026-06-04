@@ -32,8 +32,8 @@
     - title: Java
       url: /blog/?category=java
 
-- title: Workspace
-  url: /blog/?category=workspace
+- title: Experiences
+  url: /blog/?category=experiences
   items:
     - title: Projects
       url: /blog/?category=projects
