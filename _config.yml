@@ -84,6 +84,13 @@ defaults:
     values:
       categories: ["engineering", "java"]
       permalink: /blog/:categories/:title/
+
+  - scope:
+      path: "_posts/engineering/EIP-practical"
+      type: "posts"
+    values:
+      categories: ["engineering", "EIP-practical"]
+      permalink: /blog/:categories/:title/
       
 
 
