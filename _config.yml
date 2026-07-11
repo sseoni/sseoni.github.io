@@ -86,10 +86,10 @@ defaults:
       permalink: /blog/:categories/:title/
 
   - scope:
-      path: "_posts/engineering/EIP-practical"
+      path: "_posts/engineering/eip"
       type: "posts"
     values:
-      categories: ["engineering", "EIP-practical"]
+      categories: ["engineering", "eip"]
       permalink: /blog/:categories/:title/
       
 

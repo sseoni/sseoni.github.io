@@ -31,8 +31,8 @@
       url: /blog/?category=cs
     - title: Java
       url: /blog/?category=java
-    - title: 정보처리기사 실기
-      url: /blog/?category=EIP-practical
+    - title: 정보처리기사
+      url: /blog/?category=eip
 
 - title: Experiences
   url: /blog/?category=experiences
